@@ -1,4 +1,4 @@
-<h1 style="color: rgb(4, 54, 4);">Jupiter</h1>
+<h1>💫 Jupiter 💫</h1>
 
 
 <h2>Descrição</h2>
@@ -10,10 +10,9 @@
 <h2>Colaboradores</h2>
 
 
--  [Henrique Magalhães](https://github.com/Henrique-12345) | hlm2@cesar.school
--  [Igor Wanderley](https://github.com/igorfwds) | Ifws@cesar.school
--  [João Victor Ferraz](https://github.com/JoaovfGoncalves) | jvfg@cesar.school
--  [Lizandra Vieira](https://github.com/lizandravieira) | lmsvf@cesar.school
--  [Maria Júlia Menezes](https://github.com/mjuliamenezes) | mjotm@cesar.school
--  [Tiago Cavalcanti](https://github.com/Tiagopbc) | tpbc@cesar.school
-
+<p><a href="https://github.com/Henrique-12345">Henrique Magalhães</a> | hlm2@cesar.school</p>
+<p><a href="https://github.com/igorfwds">Igor Wanderley</a> | Ifws@cesar.school</p>
+<p><a href="https://github.com/JoaovfGoncalves">João Victor Ferraz</a> | jvfg@cesar.school</p>
+<p><a href="https://github.com/lizandravieira">Lizandra Vieira</a> | lmsvf@cesar.school</p>
+<p><a href="https://github.com/mjuliamenezes">Maria Júlia Menezes</a> | mjotm@cesar.school</p>
+<p><a href="https://github.com/Tiagopbc">Tiago Cavalcanti</a> | tpbc@cesar.school</p>
