@@ -1,4 +1,4 @@
-#  Jupiter
+<h1 style="color: rgb(4, 54, 4);">Jupiter</h1>
 
 
 ## Descrição
@@ -11,7 +11,7 @@
 -  [Henrique Magalhães](https://github.com/Henrique-12345) | hlm2@cesar.school
 -  [Igor Wanderley](https://github.com/igorfwds) | Ifws@cesar.school
 -  [João Victor Ferraz](https://github.com/JoaovfGoncalves) | jvfg@cesar.school
--  [Lizandra Vieira](https://github.com/lizandravieira) | 
+-  [Lizandra Vieira](https://github.com/lizandravieira) | lmsvf@cesar.school
 -  [Maria Júlia Menezes](https://github.com/mjuliamenezes) | mjotm@cesar.school
 -  [Tiago Cavalcanti](https://github.com/Tiagopbc) | tpbc@cesar.school
 
