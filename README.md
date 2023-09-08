@@ -16,3 +16,9 @@
 <p><a href="https://github.com/lizandravieira">Lizandra Vieira</a> | lmsvf@cesar.school</p>
 <p><a href="https://github.com/mjuliamenezes">Maria Júlia Menezes</a> | mjotm@cesar.school</p>
 <p><a href="https://github.com/Tiagopbc">Tiago Cavalcanti</a> | tpbc@cesar.school</p>
+
+
+<h2>Andamento do projeto no Jira</h2>
+
+
+<p><a href="https://tpbc.atlassian.net/jira/software/projects/JUP/boards/2">Projeto Jira </a></p>
