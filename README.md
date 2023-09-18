@@ -30,14 +30,14 @@
 <h2>Primeira Entrega 📦</h2>
 
 
-<p align: "center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Protótipo</a></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Protótipo</a></p>
 
 
-<h3 align: "center">Quadro de Sprint no Jira:</h3>
+<h3 align="center">Quadro de Sprint no Jira:</h3>
 <img src="imagens/foto1_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
 
 
-<h3 align: "center">Quadro Backlog no Jira:</h3>
+<h3 align="center">Quadro Backlog no Jira:</h3>
 <img src="imagens/foto2_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
 
 
