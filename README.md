@@ -18,7 +18,22 @@
 <p><a href="https://github.com/Tiagopbc">Tiago Cavalcanti</a> | tpbc@cesar.school</p>
 
 
-<h2>Andamento do projeto no Jira</h2>
+<h2>Links Importantes</h2>
 
 
-<p><a href="https://tpbc.atlassian.net/jira/software/projects/JUP/boards/2">Projeto Jira </a></p>
+<p><a href="https://tpbc.atlassian.net/jira/software/projects/JUP/boards/2">Link do Jira </a></p>
+
+
+<p><a href="https://www.figma.com/file/Hdcw3afQND6NQS8Uqp3Q7a/Lo-fi-JUPITER?type=design&node-id=1426-2107&mode=design&t=Vlbn0e5q0l2CSaMy-0">Link do protótipo lo-fi no figma</a></p>
+
+
+<h2>Primeira Entrega 📦</h2>
+
+
+<p><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Protótipo</a></p>
+
+<img src="imagens/foto1_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
+
+
+<img src="imagens/foto2_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
+
