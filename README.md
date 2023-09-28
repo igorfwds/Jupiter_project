@@ -34,10 +34,10 @@
 
 
 <h3 align="center">Quadro de Sprint no Jira:</h3>
-<img src="imagens/foto1_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
+<img src="imagens/quadro_sprint1_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
 
 
 <h3 align="center">Quadro Backlog no Jira:</h3>
-<img src="imagens/foto2_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
+<img src="imagens/backlog_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
 
 
