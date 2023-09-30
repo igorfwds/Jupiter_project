@@ -2,5 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Paciente(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # Adicione campos adicionais do paciente, como nome, data de nascimento, etc.
+    nome = models.CharField(max_length=255)
+    sobrenome = models.CharField(max_length=255)
+    data_nascimento = models.DateField()
+    endereco = models.TextField()
+    complemento = models.TextField()
+    telefone = models.CharField(max_length=15)
+    email = models.EmailField()
+    
+    def _str_(self):
+        return self.nome
