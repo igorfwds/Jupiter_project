@@ -19,6 +19,6 @@ class formLogin(forms.ModelForm):
     class Meta:
         model = Login
         fields = [
-            'cpf',
+            'email',
             'senha'
         ]

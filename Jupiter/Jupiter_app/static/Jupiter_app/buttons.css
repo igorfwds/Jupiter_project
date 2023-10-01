@@ -1,9 +1,9 @@
 button {
     font-family: 'Times New Roman', Times, serif;
-    border: 2px solid #d5d5d5;
+    border: 2px solid #d6f0df;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background-color: #ffffff00; /* define a cor de fundo do botão */
-    color: white; /* define a cor do texto do botão */
+    color: #d6f0df; /* define a cor do texto do botão */
     padding: 8px 8px; /* define o preenchimento interno do botão */
     text-align: center; /* centraliza o texto dentro do botão */
     text-decoration: none; /* remove a decoração de texto padrão do botão */

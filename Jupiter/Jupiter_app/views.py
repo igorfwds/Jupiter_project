@@ -10,8 +10,10 @@ def login(request):
         form = formLogin(request.POST)
         if form.is_valid():
             login = form.save()
-            return render(request, 'homePaciente.html')
+            print("User is authenticated")
+            return redirect('homePaciente.html')
         else:
+            print("User isn't authenticated")
             return render(request, 'login.html')
     else:
         form = formLogin()
@@ -22,13 +24,34 @@ def cadastrar(request):
         form = Cadastro(request.POST)
         if form.is_valid():
             paciente = form.save()
-            return render(request, 'sucessoCadastro.html')
+            print("deu")
+            return redirect( 'sucessoCadastro')
         else:
-            return render(request, 'falhaCadastro.html')
+            print("n deu")
+            return redirect( 'falhaCadastro')
     else:
         form = Cadastro()
         return render(request, 'cadastrar.html', {'form': form})
 
-def lista_pacientes(request):
-    pacientes = Paciente.objects.all()
-    return render(request, 'lista_pacientes.html', {'pacientes': pacientes})
+def homePaciente(request):
+
+    # Verifique se o usuário está autenticado
+    if request.user.is_authenticated:
+        # Acesse o nome do usuário logado
+        user_name = request.user.username  # Se o campo for 'username'
+        # Ou use user_name = request.user.nome se o campo for 'nome'
+    else:
+        # Usuário não autenticado, defina um valor padrão
+        user_name = "Visitante"
+
+    # Renderize a página HTML da home do paciente com o nome do usuário
+    return redirect( 'homePaciente.html', {'user_name': user_name})
+
+
+
+def sucessoCadastroView(request):
+    return render(request, 'sucessoCadastro.html')
+
+def falhaCadastroView(request):
+    return render(request, 'falhaCadastro.html')
+
