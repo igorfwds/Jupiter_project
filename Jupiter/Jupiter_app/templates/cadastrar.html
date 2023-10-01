@@ -1,17 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Paciente</title>
+    <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
+    <title>Cadastro</title>
 </head>
-<body>
-    <h1>Cadastrar Paciente</h1>
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Cadastrar</button>
-</form>
-<a href="{% url 'pagina_inicial' %}">Voltar para a página inicial</a>
+
+<body class="site_body">
+    <div class="forms_title">
+        <h1 align="center">Cadastre-se</h1>
+    </div>
+    <div class="forms_container">
+        <form class="cadastro_forms" method="POST">
+            {% csrf_token %}
+            <label for="nome">Nome: </label>
+            <input id="nome" type="text" name="nome" maxlength="100" required>
+            <label for="CPF">CPF: </label>
+            <input id="cpf" type="text" name="cpf" maxlength="14" required>
+            <label for="dataNascimento">Data de Nascimento: </label>
+            <input id="dataNascimento" type="date" name="dataNascimento" required>
+            <label for="celular">Celular: </label>
+            <input id="celular" type="text" name="celular" maxlength="13" required>
+            <label for="Email">E-mail: </label>
+            <input id="email" type="email" name="email" maxlength="254" required>
+            <br>
+            <button id="cancelar" type="button" onclick="window.location.replace('/')">Cancelar</button>
+            <button id="enviar" type="submit">Enviar</button>
+        </form>
+    </div>
 </body>
+
 </html>

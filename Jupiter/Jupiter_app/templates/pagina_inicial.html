@@ -1,11 +1,51 @@
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+{%load static%}
+
+<html lang="pt-br">
+
 <head>
-    <title>Seu Sistema - Página Inicial</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
+    <title>Página Inicial</title>
 </head>
+
 <body>
-    <h1>Bem-vindo ao Jupiter</h1>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'cadastrar' %}">Cadastrar</a>
+
+    <header class="site-header">
+        <img class="logo" alt="logo" onclick="window.location.replace('/')"
+            src="{% static 'Jupiter_app/images/logomaisnome.png' %}">
+        <div class="button-container-header">
+            <button type="button" class="button-base-header" onclick="window.location.replace('/login/')"
+                id="login">Login</button>
+            <button type="button" class="button-base-header" onclick="window.location.replace('/cadastrar/')" >Cadastre-se</button>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="center-container">
+            
+            <div class="text">
+                <p>Jupiter</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="button-container-footer">
+            <button type="button" class="button-base-footer"
+                onclick="window.alert('Funcionalidade Indisponível')">?</button>
+        </div>
+    </footer>
+
 </body>
+
 </html>

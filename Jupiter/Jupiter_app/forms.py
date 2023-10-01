@@ -1,7 +1,24 @@
 from django import forms
-from .models import Paciente
+from .models import Paciente, Login
 
-class PacienteForm(forms.ModelForm):
+
+class Cadastro(forms.ModelForm):
     class Meta:
         model = Paciente
-        fields = ['nome', 'sobrenome', 'data_nascimento', 'endereco', 'complemento', 'email', 'telefone']
+        fields = [
+            'nome',
+            'cpf', 
+            'data_nascimento', 
+            'endereco', 
+            'complemento', 
+            'email', 
+            'celular'
+        ]
+
+class formLogin(forms.ModelForm):
+    class Meta:
+        model = Login
+        fields = [
+            'cpf',
+            'senha'
+        ]
