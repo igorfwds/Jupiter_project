@@ -1,30 +1,28 @@
+from django.contrib.auth import login
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
-from .models import Paciente
-from .forms import Cadastro, formLogin
-from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
+def paciente_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            # Autentica o usuário
+            login(request, form.get_user())
+            return redirect('homePaciente')
+        else:
+            print("Usuário ou senha incorreto!")
+            messages.error(request, "Usuário ou senha incorreto!")
+    else:
+        form = AuthenticationForm()
+   
+    return render(request, 'login.html', {'form': form})
+
+
+
 
 def home(request):
     return render(request, './pagina_inicial.html')
-
-
-def login(request):
-    if request.method == 'POST':
-        form = formLogin(request.POST)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['senha']
-            user = authenticate(request, username=email, password=password)  # Use o email como username
-            if user is not None:
-                login(request, user)
-                print("User is authenticated")
-                return redirect('homePaciente')
-            else:
-                print("User isn't authenticated")
-        else:
-            print("Form is not valid")
-    else:
-        form = formLogin()
-    return render(request, 'login.html', {'form': form})
 
 
 def cadastrar(request):
@@ -58,7 +56,7 @@ def homePaciente(request):
         user_name = "Visitante"
 
     # Renderize a página HTML da home do paciente com o nome do usuário
-    return redirect( 'homePaciente.html', {'user_name': user_name})
+    return render(request, 'homePaciente.html', {'user_name': user_name})
 
 
 
