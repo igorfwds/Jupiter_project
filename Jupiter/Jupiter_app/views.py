@@ -1,22 +1,31 @@
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User 
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from .forms import Cadastro
 
 def paciente_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            # Autentica o usuário
-            login(request, form.get_user())
-            return redirect('homePaciente')
+            email = form.cleaned_data['email']  # Pega o emaildo campo username
+            senha = form.cleaned_data['senha']
+            user = authenticate(request, username=email, password=senha)
+            if user is not None:
+                login(request, user)
+                return redirect('homePaciente')
+            else:
+                print("Usuário ou senha incorreto!")
+                messages.error(request, "Usuário ou senha incorreto!")
         else:
             print("Usuário ou senha incorreto!")
             messages.error(request, "Usuário ou senha incorreto!")
     else:
         form = AuthenticationForm()
-   
+
     return render(request, 'login.html', {'form': form})
+
 
 
 
@@ -30,19 +39,29 @@ def cadastrar(request):
         form = Cadastro(request.POST)
         if form.is_valid():
             try:
-                paciente = form.save()
-                return redirect( 'sucessoCadastro')
+                # Crie um usuário User separado
+                user = User.objects.create_user(username=form.cleaned_data['email'], password=form.cleaned_data['senha'])
+
+                # Crie uma instância do paciente a partir do formulário
+                paciente = form.save(commit=False)
+
+                # Associe o usuário ao paciente
+                paciente.user = user
+                
+                # Salve o paciente no banco de dados
+                paciente.save()
+
+                return redirect('sucessoCadastro')
             except Exception as e:
                 print("Exceção ao tentar salvar o paciente:", str(e))
                 return redirect('falhaCadastro')
-        
-            
         else:
             print("Erro ao cadastrar:", form.errors)
-            return redirect( 'falhaCadastro')
+            return redirect('falhaCadastro')
     else:
         form = Cadastro()
         return render(request, 'cadastrar.html', {'form': form})
+
 
 def homePaciente(request):
 

@@ -3,9 +3,8 @@ from django.contrib.auth.models import User
 
 
 class Paciente(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)  
     nome = models.CharField(max_length=100, null=False, blank=False,default='none')
-    cpf = models.CharField(max_length=14, unique=True, null=False, blank=False,default='none')
+    cpf = models.CharField(max_length=14, unique=True, null=False, blank=False)
     data_nascimento = models.DateField(blank=False,default='none')
     endereco = models.CharField(max_length=100, null=False, blank=False,default='none')
     complemento = models.CharField(max_length=100,default='Sem Complemento')
@@ -21,5 +20,5 @@ class Paciente(models.Model):
     altura = models.FloatField(blank=True, null=True,default=0.0)
 
     def __str__(self):
-        return self.user.username  # Use o nome de usuário do User como representação do paciente
+        return self.user.email  # Use o nome de usuário do User como representação do paciente
 

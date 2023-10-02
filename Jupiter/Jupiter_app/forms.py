@@ -2,6 +2,7 @@ from django import forms
 from .models import Paciente
 from django.contrib.auth.forms import AuthenticationForm
 
+
 class LoginForm(AuthenticationForm):
     # Se você quiser personalizar os campos, pode fazer isso aqui
     email = forms.EmailField(required=True)
@@ -9,6 +10,7 @@ class LoginForm(AuthenticationForm):
 
 
 class Cadastro(forms.ModelForm):
+
     nome = forms.CharField(max_length=100)
     cpf = forms.CharField(max_length=14)
     data_nascimento = forms.DateField()
