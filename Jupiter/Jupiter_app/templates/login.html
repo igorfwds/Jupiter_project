@@ -23,14 +23,15 @@
     <div class="forms_container">
         <form class="cadastro_forms" method="POST">
             {% csrf_token %}
-            <label for="email">email: </label>
-            <input id="email" type="text" name="email" maxlength="254" required>
+            <label for="email">E-mail: </label>
+            <input id="email" type="text" name="email" maxlength="254" required >
             <label for="senha">Senha: </label>
-            <input id="senha" type="password" name="senha" maxlength="51" required>
+            <input id="senha" type="password" name="senha" maxlength="100" required>
             <br>
-            <button id="login" type="submit" onclick="window.location.replace('/homePaciente/')">Login</button>
+            <button id="login" type="submit">Login</button>
             <button type="button" onclick="window.location.replace('/')">Cancelar</button>
         </form>
+        
     </div>
 </body>
 

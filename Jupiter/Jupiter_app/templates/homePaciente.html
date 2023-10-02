@@ -1,16 +1,44 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+{%load static%}
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home do Paciente</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
+    <title>Portal de Atividades</title>
 </head>
+
 <body>
-    <h1>Olá, {{ user_name }}</h1>
-    <p>Selecione uma opção:</p>
-    <ul>
-        <li><a href="#">Visualizar Exames</a></li>
-        <li><a href="#">Visualizar Atestados Médicos</a></li>
-    </ul>
+    <header class="site-header">
+        <img class="logo" alt="logo" onclick="window.location.replace('/')"
+            src="{% static 'Jupiter_app/images/logomaisnome.png' %}">
+    </header>
+
+    <main class="site-main">
+        <div>
+            <button id="visualizar_exames" type="button" class="button_color"
+                onclick="window.location.replace('exames/ ')">Visualizar Exames</button>
+            <button id="visualizar_receituario" type="button" class="button_color" 
+                onclick="window.location.replace('receituarios/ ')">Visualizar Receituários</button>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="button-container-footer">
+            <button type="button" class="button-base-footer"
+                onclick="window.alert('Funcionalidade Indisponível')">?</button>
+        </div>
+    </footer>
 </body>
+
 </html>

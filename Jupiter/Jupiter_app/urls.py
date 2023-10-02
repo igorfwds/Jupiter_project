@@ -10,4 +10,5 @@ urlpatterns = [
     path('homePaciente/', views.homePaciente, name='homePaciente'),
     path('sucessoCadastro/', views.sucessoCadastroView, name='sucessoCadastro'),
     path('falhaCadastro/', views.falhaCadastroView, name='falhaCadastro')
+    
 ]

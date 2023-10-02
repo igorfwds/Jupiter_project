@@ -1,33 +1,46 @@
 from django.shortcuts import render, redirect
 from .models import Paciente
 from .forms import Cadastro, formLogin
+from django.contrib.auth import authenticate, login
 
 def home(request):
     return render(request, './pagina_inicial.html')
+
 
 def login(request):
     if request.method == 'POST':
         form = formLogin(request.POST)
         if form.is_valid():
-            login = form.save()
-            print("User is authenticated")
-            return redirect('homePaciente.html')
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['senha']
+            user = authenticate(request, username=email, password=password)  # Use o email como username
+            if user is not None:
+                login(request, user)
+                print("User is authenticated")
+                return redirect('homePaciente')
+            else:
+                print("User isn't authenticated")
         else:
-            print("User isn't authenticated")
-            return render(request, 'login.html')
+            print("Form is not valid")
     else:
         form = formLogin()
-        return render(request, 'login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
+
 
 def cadastrar(request):
     if request.method == 'POST':
         form = Cadastro(request.POST)
         if form.is_valid():
-            paciente = form.save()
-            print("deu")
-            return redirect( 'sucessoCadastro')
+            try:
+                paciente = form.save()
+                return redirect( 'sucessoCadastro')
+            except Exception as e:
+                print("Exceção ao tentar salvar o paciente:", str(e))
+                return redirect('falhaCadastro')
+        
+            
         else:
-            print("n deu")
+            print("Erro ao cadastrar:", form.errors)
             return redirect( 'falhaCadastro')
     else:
         form = Cadastro()

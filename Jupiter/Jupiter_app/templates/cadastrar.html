@@ -24,16 +24,42 @@
     <div class="forms_container">
         <form class="cadastro_forms" method="POST">
             {% csrf_token %}
-            <label for="nome">Nome: </label>
-            <input id="nome" type="text" name="nome" maxlength="100" required>
-            <label for="CPF">CPF: </label>
-            <input id="cpf" type="text" name="cpf" maxlength="14" required>
-            <label for="dataNascimento">Data de Nascimento: </label>
-            <input id="dataNascimento" type="date" name="dataNascimento" required>
-            <label for="celular">Celular: </label>
-            <input id="celular" type="text" name="celular" maxlength="13" required>
-            <label for="Email">E-mail: </label>
-            <input id="email" type="email" name="email" maxlength="254" required>
+            <div class="obrigatorio">
+                <label for="nome">Nome: </label>
+                <input id="nome" type="text" name="nome" maxlength="100" required>
+                <label for="cpf">CPF: </label>
+                <input id="cpf" type="text" name="cpf" maxlength="14" required>
+                <label for="data_nascimento">Data de Nascimento: </label>
+                <input id="data_nascimento" type="date" name="data_nascimento" required>
+                <label for="Endereco">Endereço: </label>
+                <input id="endereco"type="text" name="endereco" maxlength="100" required>
+                <label for="complemento">Complemento:</label>
+                <input id="complemento" type="text" name="complemento" maxlength="100">
+                <label for="Email">E-mail: </label>
+                <input id="email" type="email" name="email" maxlength="254" required>
+                <label for="celular">Celular: </label>
+                <input id="celular" type="text" name="celular" maxlength="13" required>
+                <label for="senha">Senha:</label>
+                <input id="senha" type="text" name="senha" maxlength="100" required>
+                <label for="rg">RG:</label>
+                <input id="rg" type="text" name="rg" maxlength="12" required>
+                <label for="cep">Cep:</label>
+                <input id="cep" type="text" name="cep" maxlength="9" required>
+            </div>
+            <br>
+            <div class="nao_obrigatorio">
+                <label for="tipo_sanguineo">Tipo Sanguíneo:</label>
+                <input id="tipo_sanguineo" type="text" name="tipo_sanguineo" >
+                <label for="alergias">Histórico de Alergias:</label>
+                <input id="alergias" type="text" name="alergias">
+                <label for="remedios">Medicamentos de uso contínuo:</label>
+                <input type="text" name="remedios" id="remedios">
+                <label for="peso">Peso:</label>
+                <input type="text" name="peso" id="peso">
+                <label for="altura">Altura:</label>
+                <input type="text" name="altura" id="altura">
+            </div>
+
             <br>
             <button id="cancelar" type="button" onclick="window.location.replace('/')">Cancelar</button>
             <button id="enviar" type="submit">Enviar</button>

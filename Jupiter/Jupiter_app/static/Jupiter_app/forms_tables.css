@@ -5,7 +5,14 @@
     font-family:'Copperplate Gothic Light', Courier, monospace;
     padding-top: 20px;
     margin: 0 auto; 
-    background-color: #;
+    background-color: #7E84ED;
+}
+
+.obrigatorio{
+    align-items: left;
+}
+.nao_obrigatorio{
+    align-items: right;
 }
 
 input[type=text], input[type=email], input[type=number], input[type=date], input[type=datetime], input[type=password]{
