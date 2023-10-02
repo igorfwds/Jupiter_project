@@ -20,8 +20,8 @@ def paciente_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']  # Pega o email do campo username
-            senha = form.cleaned_data['senha']
+            email = form.cleaned_data['username']  # Pega o email do campo username
+            senha = form.cleaned_data['password']
             user = authenticate(request, username=email, password=senha)
             if user is not None:
                 return redirect('homePaciente')
@@ -69,7 +69,7 @@ def cadastrar(request):
             print("Erro ao cadastrar:", form.errors)
             return redirect('falhaCadastro')
     else:
-        form = Cadastro()
+        form = CadastroForm()
         return render(request, 'cadastrar.html', {'form': form})
 
 

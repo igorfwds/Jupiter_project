@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {%load static%}
 
@@ -19,20 +18,20 @@
 
 <body>
     <header class="site-header">
-        <img class="logo" alt="logo" onclick="window.location.replace('/')"
+        <img class="logo" alt="logo" onclick="window.location.href = '/homePaciente/'"
             src="{% static 'Jupiter_app/images/logo(1).png' %}">
-            <div class="button-container-header">
-                <button type="button" class="button-base-header" onclick="window.location.replace('/')"
-                    id="logout">Logout</button>
-                
-            </div>
+        <div class="button-container-header">
+            <button type="button" class="button-base-header" onclick="window.location.replace('/')"
+                id="logout">Logout</button>
+
+        </div>
     </header>
 
     <main class="site-main">
         <div>
             <button id="visualizar_exames" type="button" class="button_color"
                 onclick="window.location.replace('exames/ ')">Visualizar Exames</button>
-            <button id="visualizar_receituario" type="button" class="button_color" 
+            <button id="visualizar_receituario" type="button" class="button_color"
                 onclick="window.location.replace('receituarios/ ')">Visualizar Receituários</button>
         </div>
 

@@ -1,4 +1,3 @@
-
 <!doctype html>
 {%load static%}
 
@@ -21,12 +20,13 @@
 <body>
 
     <header class="site-header">
-        <img class="logo" alt="logo" onclick="window.location.replace('/')"
+        <img class="logo" alt="logo" onclick="window.location.href = '/homePaciente/'"
             src="{% static 'Jupiter_app/images/logo(1).png' %}">
         <div class="button-container-header">
             <button type="button" class="button-base-header" onclick="window.location.replace('/paciente_login/')"
                 id="login">Login</button>
-            <button type="button" class="button-base-header" onclick="window.location.replace('/cadastrar/')" >Cadastre-se</button>
+            <button type="button" class="button-base-header"
+                onclick="window.location.replace('/cadastrar/')">Cadastre-se</button>
         </div>
     </header>
 
@@ -35,8 +35,8 @@
             <div class="image">
                 <img class="center-img" src="{% static 'Jupiter_app/images/logo(1).png' %}">
             </div>
-            
-            
+
+
         </div>
     </main>
 
