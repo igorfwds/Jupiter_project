@@ -17,22 +17,36 @@
 </head>
 
 <body class="site_body">
-    <div class="forms_title">
-        <h1 align="center">Login</h1>
-    </div>
-    <div class="forms_container">
-        <form class="cadastro_forms" method="POST">
-            {% csrf_token %}
-            <label for="email">E-mail: </label>
-            <input id="email" type="text" name="email" maxlength="254" required >
-            <label for="senha">Senha: </label>
-            <input id="senha" type="password" name="senha" maxlength="100" required>
-            <br>
-            <button id="login" type="submit">Login</button>
-            <button type="button" onclick="window.location.replace('/')">Cancelar</button>
-        </form>
-        
-    </div>
+    <header class="site-header">
+        <img class="logo" alt="logo" onclick="window.location.replace('/')"
+            src="{% static 'Jupiter_app/images/logo(1).png' %}">
+    </header>
+
+    <main class="site-main">
+        <div class="forms_title">
+            <h1 align="center">Login</h1>
+        </div>
+        <div class="forms_container">
+            <form class="cadastro_forms" method="POST">
+                {% csrf_token %}
+                <label for="email">E-mail: </label>
+                <input id="email" type="text" name="email" maxlength="254" required >
+                <label for="senha">Senha: </label>
+                <input id="senha" type="password" name="senha" maxlength="100" required>
+                <br>
+                <button id="login" type="submit">Login</button>
+                <button type="button" onclick="window.location.replace('/')">Cancelar</button>
+            </form>
+    
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="button-container-footer">
+            <button type="button" class="button-base-footer"
+                onclick="window.alert('Funcionalidade Indisponível')">?</button>
+        </div>
+    </footer>
 </body>
 
 </html>

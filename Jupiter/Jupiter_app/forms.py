@@ -1,12 +1,29 @@
 from django import forms
-from .models import Paciente
+from .models import Paciente, Exame
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate  
 
+
+class ExameForm(forms.ModelForm):
+    class Meta:
+        model = Exame
+        fields = ['nome', 'data_realizacao', 'resultado']
 
 class LoginForm(AuthenticationForm):
-    # Se você quiser personalizar os campos, pode fazer isso aqui
     email = forms.EmailField(required=True)
     senha = forms.CharField(widget=forms.PasswordInput)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        email = cleaned_data.get('email')
+        senha = cleaned_data.get('senha')
+
+        if email is not None and senha:
+            self.user_cache = authenticate(self.request, username=email, password=senha)
+            if self.user_cache is None:
+                raise forms.ValidationError('Usuário ou senha incorreto.')
+        return self.cleaned_data
+
 
 
 class Cadastro(forms.ModelForm):

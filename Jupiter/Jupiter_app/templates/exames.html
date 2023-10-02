@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -14,30 +13,33 @@
     <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
-    <title>Portal de Atividades</title>
+    <title>Exames</title>
 </head>
 
 <body>
     <header class="site-header">
-        <img class="logo" alt="logo" onclick="window.location.replace('/')"
+        <img class="logo" alt="logo" onclick="window.location.replace('home_paciente')"
             src="{% static 'Jupiter_app/images/logo(1).png' %}">
-            <div class="button-container-header">
-                <button type="button" class="button-base-header" onclick="window.location.replace('/')"
-                    id="logout">Logout</button>
-                
-            </div>
     </header>
-
     <main class="site-main">
-        <div>
-            <button id="visualizar_exames" type="button" class="button_color"
-                onclick="window.location.replace('exames/ ')">Visualizar Exames</button>
-            <button id="visualizar_receituario" type="button" class="button_color" 
-                onclick="window.location.replace('receituarios/ ')">Visualizar Receituários</button>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Médico</th>
+                    <th>Tipo de Exame</th> <!-- Correção aqui -->
+                    <th>Data da Realização</th>
+                </tr>
+                {% for item in dados %}
+                <tr>
+                    <td>{{ item.nomeMedicoExame }}</td>
+                    <td>{{ item.tipoExame }}</td>
+                    <td>{{ item.dataExame }}</td>
+                    <td><a href="{% url 'visualizar_exame' item.id %}" class="button-view">Visualizar</a></td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
-
     </main>
-
     <footer class="site-footer">
         <div class="button-container-footer">
             <button type="button" class="button-base-footer"

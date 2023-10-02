@@ -4,16 +4,26 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import Cadastro
+from .models import Exame  # Importe o modelo Exame
+
+def exames(request):
+    dados = Exame.objects.all()  # Use Exame em vez de exames
+
+    context = {
+        'nome': 'Maria Lili',
+        'dados': dados,
+    }
+
+    return render(request, 'exames.html', context)
 
 def paciente_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']  # Pega o emaildo campo username
+            email = form.cleaned_data['email']  # Pega o email do campo username
             senha = form.cleaned_data['senha']
             user = authenticate(request, username=email, password=senha)
             if user is not None:
-                login(request, user)
                 return redirect('homePaciente')
             else:
                 print("Usuário ou senha incorreto!")

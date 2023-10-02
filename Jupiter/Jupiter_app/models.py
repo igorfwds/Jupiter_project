@@ -22,3 +22,9 @@ class Paciente(models.Model):
     def __str__(self):
         return self.user.email  # Use o nome de usuário do User como representação do paciente
 
+
+class Exame(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    nome = models.CharField(max_length=100)
+    data_realizacao = models.DateField()
+    resultado = models.FileField(upload_to='exames/')

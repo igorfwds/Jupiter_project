@@ -9,6 +9,7 @@ urlpatterns = [
     path('cadastrar/', views.cadastrar, name='cadastrar'),
     path('homePaciente/', views.homePaciente, name='homePaciente'),
     path('sucessoCadastro/', views.sucessoCadastroView, name='sucessoCadastro'),
-    path('falhaCadastro/', views.falhaCadastroView, name='falhaCadastro')
+    path('falhaCadastro/', views.falhaCadastroView, name='falhaCadastro'),
+    path('homePaciente/exames/',views.exames, name='visualizarExames'),
     
 ]
