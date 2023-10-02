@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User 
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import Cadastro
+from .forms import CadastroForm
 from .models import Exame  # Importe o modelo Exame
 
 def exames(request):
@@ -46,7 +46,7 @@ def home(request):
 
 def cadastrar(request):
     if request.method == 'POST':
-        form = Cadastro(request.POST)
+        form = CadastroForm(request.POST)
         if form.is_valid():
             try:
                 # Crie um usuário User separado

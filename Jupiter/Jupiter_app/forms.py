@@ -26,7 +26,7 @@ class LoginForm(AuthenticationForm):
 
 
 
-class Cadastro(forms.ModelForm):
+class CadastroForm(forms.ModelForm):
 
     nome = forms.CharField(max_length=100)
     cpf = forms.CharField(max_length=14)
