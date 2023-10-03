@@ -12,6 +12,4 @@ urlpatterns = [
     path('falhaCadastro/', views.falhaCadastroView, name='falhaCadastro'),
     path('homePaciente/exames/',views.exibir_exames, name='exibir_exames'),
     path('homePaciente/receituarios/', views.exibir_receituarios, name='exibir_receituarios'),
-    path('homePaciente/exames/visualizar_exame/',views.exibir_exames, name='exibir_exames'),
-    path('homePaciente/exames/visualizar_receituario/',views.exibir_exames, name='exibir_exames'),
 ]
