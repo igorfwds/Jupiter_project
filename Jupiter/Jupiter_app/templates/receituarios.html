@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
+    <title>Receituários</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <img class="logo" alt="logo" onclick="window.location.href = '/homePaciente/'"
+            src="{% static 'Jupiter_app/images/logo(1).png' %}">
+
+    </header>
+    <main class="site-main">
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Médico</th>
+                    <th>Conteúdo da receita</th> <!-- Correção aqui -->
+                    <th>Data da emissão</th>
+                </tr>
+                {% for item in dados %}
+                <tr>
+                    <td>{{ item.nomeMedicoReceita }}</td>
+                    <td>{{ item.conteudoReceita }}</td>
+                    <td>{{ item.dataReceita }}</td>
+                    <td><a href="{% url 'visualizar_receituarios' item.id %}" class="button-view">Visualizar</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="button-container-footer">
+            <button type="button" class="button-base-footer"
+                onclick="window.alert('Funcionalidade Indisponível')">?</button>
+        </div>
+    </footer>
+</body>
+
+</html>

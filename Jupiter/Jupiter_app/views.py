@@ -1,20 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import CadastroForm
-from .models import Exame  # Importe o modelo Exame
-
-def exames(request):
-    dados = Exame.objects.all()  # Use Exame em vez de exames
-
-    context = {
-        'nome': 'Maria Lili',
-        'dados': dados,
-    }
-
-    return render(request, 'exames.html', context)
+from .models import Exame, Receituario  # Importe o modelo Exame
 
 def paciente_login(request):
     if request.method == 'POST':
@@ -74,18 +64,7 @@ def cadastrar(request):
 
 
 def homePaciente(request):
-
-    # Verifique se o usuário está autenticado
-    if request.user.is_authenticated:
-        # Acesse o nome do usuário logado
-        user_name = request.user.username  # Se o campo for 'username'
-        # Ou use user_name = request.user.nome se o campo for 'nome'
-    else:
-        # Usuário não autenticado, defina um valor padrão
-        user_name = "Visitante"
-
-    # Renderize a página HTML da home do paciente com o nome do usuário
-    return render(request, 'homePaciente.html', {'user_name': user_name})
+    return render(request, 'homePaciente.html')
 
 
 
@@ -95,3 +74,12 @@ def sucessoCadastroView(request):
 def falhaCadastroView(request):
     return render(request, 'falhaCadastro.html')
 
+def exibir_exames(request):
+    exames = Exame.objects.all()
+
+    return render(request, 'exames.html', {'exames': exames})
+
+def exibir_receituarios(request):
+    receitas = Receituario.objects.all()
+
+    return render(request, 'receituarios.html', {'receitas': receitas})

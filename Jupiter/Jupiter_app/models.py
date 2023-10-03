@@ -28,3 +28,9 @@ class Exame(models.Model):
     nome = models.CharField(max_length=100)
     data_realizacao = models.DateField()
     resultado = models.FileField(upload_to='exames/')
+
+class Receituario(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    nome = models.CharField(max_length=100)
+    data_emissao = models.DateField()
+    conteudo = models.FileField(upload_to='receituarios/')

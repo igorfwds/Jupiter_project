@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/exame.css' %}">
+    <title>Detalhes do Exame</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <img class="logo" alt="logo" onclick="window.location.href = '/homePaciente/'"
+            src="{% static 'Jupiter_app/images/logo(1).png' %}">
+    </header>
+    <main class="site-main">
+        <div class="exame-details">
+            <h1>Detalhes do Exame</h1>
+            <table>
+                <tr>
+                    <th>Nome do Exame:</th>
+                    <td>{{ exame.nome }}</td>
+                </tr>
+                <tr>
+                    <th>Data de Realização:</th>
+                    <td>{{ exame.data_realizacao }}</td>
+                </tr>
+                <tr>
+                    <th>Resultado do Exame:</th>
+                    <td><a href="{{ exame.resultado.url }}" target="_blank">Visualizar</a></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="button-container-footer">
+            <button type="button" class="button-base-footer"
+                onclick="window.alert('Funcionalidade Indisponível')">?</button>
+        </div>
+    </footer>
+</body>
+
+</html>

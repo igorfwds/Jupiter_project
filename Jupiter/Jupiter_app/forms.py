@@ -1,13 +1,9 @@
 from django import forms
-from .models import Paciente, Exame
+from .models import Paciente, Exame, Receituario
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate  
 
 
-class ExameForm(forms.ModelForm):
-    class Meta:
-        model = Exame
-        fields = ['nome', 'data_realizacao', 'resultado']
 
 class LoginForm(AuthenticationForm):
     email = forms.EmailField(required=True)
@@ -64,6 +60,15 @@ class CadastroForm(forms.ModelForm):
             'altura'
         ]
 
+class ExameForm(forms.ModelForm):
+    class Meta:
+        model = Exame
+        fields = ['nome', 'data_realizacao', 'resultado']
+
+class ReceituarioForm(forms.ModelForm):
+    class Meta:
+        model = Receituario
+        fields = ['nome', 'data_emissao', 'conteudo']
 
 
 
