@@ -31,7 +31,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Cleaning testing files
-          run: |
+        run: |
             cd Jupiter/
             rm db.sqlite3
             rm .env
