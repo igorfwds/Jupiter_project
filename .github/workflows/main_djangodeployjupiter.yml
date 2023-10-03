@@ -44,7 +44,7 @@ jobs:
         with:
           name: python-app
           path: |
-            .\Jupiter
+            .
             !venv/
 
   deploy:
