@@ -41,3 +41,29 @@
 <img src="imagens/backlog_entrega1.jpg" alt="Quadro de sprint no jira: foto 1">
 
 
+<h2>Segunda Entrega 📦</h2>
+
+<h3 align="center">Deploy:</h3>
+
+
+<p align="center">Instruções de acesso:<br>Ao acessar a Tela Inicial do Sistema, o usuário tem duas opções disponíveis. Ele pode optar por fazer login, caso já tenha uma conta registrada, ou realizar o Cadastro no Sistema. Uma vez logado, na Tela de Serviços do Usuário, ele terá acesso à visualização de exames e receituários.</p>
+
+
+<h3 align="center">Relato Pair Programming</h3>
+<p>Usando o método de Pair Programming, foram compreendidas as vantagens que o sistema oferece e, também, foram identificados erros e desafios ao longo do percurso. Realizando pequenas revisões, foram efetuadas as modificações necessárias para manter o projeto em andamento e seguir o fluxo. Essa abordagem de trabalho fortaleceu as relações profissionais entre os membros, o compartilhamento de conhecimento e experiências se mostrou um diferencial, reduzindo a dependência de um único integrante e enriquecendo as decisões com a contribuição de duas perspectivas diferentes. No decorrer desse processo, foram observados, também, detalhes sobre os papéis de "condutor" e "navegador", sendo possível aprimorar a comunicação entre os membros e a alternância de papéis, permitindo que cada integrante atuasse como condutor em um momento e como navegador em outro. Foi percebido que a programação em pares não é apenas uma técnica eficaz, mas também uma valiosa oportunidade de aprendizado e desenvolvimento.</p>
+
+
+<h3 align="center">Quadro de Sprint no Jira:</h3>
+<img src="imagens/quadro_sprint1_entrega2.jpg" alt="Quadro de sprint no jira: foto 1">
+
+
+<h3 align="center">Quadro Backlog no Jira:</h3>
+<img src="imagens/backlog_entrega2.jpg" alt="Quadro 'backlog no jira: foto 1">
+
+
+<h3 align="center">Diagrama de Atividades:</h3>
+<img src="imagens/diag_entrega2.jpg" alt="Diagrama de Atividades: foto 1">
+
+
+<h3 align="center">Issue/Bug Tracker:</h3>
+<img src="imagens/bugtracker_entrega2.jpg" alt="Bug Tracker: foto 1">
