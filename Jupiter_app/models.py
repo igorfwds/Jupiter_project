@@ -13,7 +13,7 @@ class Paciente(models.Model):
     senha = models.CharField(max_length=100,blank=False,null=False,default='none')
     rg = models.CharField(max_length=12, unique=True,blank=False,null=False,default='none')
     cep = models.CharField(max_length=9,blank=False,null=False,default='none')
-    tipo_sanguineo = models.CharField(max_length=5, blank=True, null=True,default='Nada Consta')
+    tipo_sanguineo = models.CharField(max_length=20, blank=True, null=True,default='Nada Consta')
     alergias = models.TextField(blank=True, null=True,default='Nada Consta')
     remedios = models.TextField(blank=True, null=True,default='Nada Consta')
     peso = models.FloatField(blank=True, null=True,default=0.0)

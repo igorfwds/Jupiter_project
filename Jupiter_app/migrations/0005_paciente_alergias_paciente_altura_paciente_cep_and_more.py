@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='paciente',
             name='tipo_sanguineo',
-            field=models.CharField(blank=True, default='Nada Consta', max_length=5, null=True),
+            field=models.CharField(blank=True, default='Nada Consta', max_length=20, null=True),
         ),
         migrations.AlterField(
             model_name='paciente',
