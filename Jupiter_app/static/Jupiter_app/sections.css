@@ -30,7 +30,10 @@
     align-items: center;
     justify-content: center;
     background-color: #7E84ED;
-    width: 100%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
     border-radius: 40px;
 }
 
