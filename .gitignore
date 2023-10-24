@@ -5,8 +5,7 @@
 *.log
 *.pot
 *.pyc
-__pycache__/
-__pycache__/
+_pycache_/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -123,7 +122,7 @@ ipython_config.py
 .pdm.toml
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
+_pypackages_/
 
 # Celery stuff
 celerybeat-schedule
@@ -174,6 +173,5 @@ cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 
-# staticfiles
-.staticfiles/
+# Outros arquivos
 staticfiles/
