@@ -175,3 +175,5 @@ cython_debug/
 
 # Outros arquivos
 staticfiles/
+
+migrations/
