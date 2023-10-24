@@ -26,10 +26,10 @@ NOT_PROD = not TARGET_ENV.lower().startswith('prod')
 
 if NOT_PROD:
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = False
+    DEBUG = True
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = 'A SECRET KEY DO SEU PROJETO' #Testar colocar a secret key aqui
-    ALLOWED_HOSTS = ['djangodeployjupiter.azurewebsites.net']
+    ALLOWED_HOSTS = ['djangodeployjupiter.azurewebsites.net','127.0.0.1']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
