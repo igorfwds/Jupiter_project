@@ -6,14 +6,41 @@
     padding-top: 20px;
     margin: 0 auto; 
     background-color: #7E84ED;
+    display: flex;
+    align-items: center;
 }
 
-.obrigatorio{
-    align-items: left;
+/* Adicione uma classe para a div que contém os botões */
+.button-container {
+    clear: both; /* Limpa a flutuação dos elementos anteriores */
+    text-align: center; /* Centraliza os botões */
+    margin-top: 20px; /* Define a margem superior para separar dos elementos anteriores */
 }
-.nao_obrigatorio{
-    align-items: right;
+
+
+.forms_container {
+    width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
+    
 }
+
+.obrigatorio {
+    width: 48%; /* Define a largura da coluna esquerda */
+    float: left; /* Alinha a coluna à esquerda */
+    box-sizing: border-box; /* Mantém a largura real após adicionar o padding */
+    padding: 20px;
+    padding-left: 5%;
+    padding: 10px 100px 10px 0;
+    
+}
+
+.nao_obrigatorio {
+    width: 48%; /* Define a largura da coluna direita */
+    float: right; /* Alinha a coluna à direita */
+    box-sizing: border-box; /* Mantém a largura real após adicionar o padding */
+    padding: 10px 0 10px 100px;
+}
+
+
 
 input[type=text], input[type=email], input[type=number], input[type=date], input[type=datetime], input[type=password]{
     border: 1px solid #ccc; /* define a borda da caixa de digitação */
