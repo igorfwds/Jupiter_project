@@ -9,6 +9,14 @@
     display: flex;
     align-items: center;
 }
+.cadastro_forms_login {
+    text-align: center;
+    font-family:'Copperplate Gothic Light', Courier, monospace;
+    padding-top: 5px;
+    margin: 0 auto; 
+    background-color: #7E84ED;
+    align-items: center;
+}
 
 /* Adicione uma classe para a div que contém os botões */
 .button-container {
@@ -20,7 +28,6 @@
 
 .forms_container {
     width: 100%; /* Garante que ocupe toda a largura do contêiner pai */
-    
 }
 
 .obrigatorio {
@@ -56,7 +63,6 @@ label {
     margin-bottom: 5px; /* define a margem inferior da label */
     font-size: 16px; /* define o tamanho da fonte da label */
     color: #ffffff; /* define a cor do texto da label */
-    width: 200px;
     
 }
 
