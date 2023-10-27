@@ -141,7 +141,7 @@ def bookingSubmit(request):
     #Get stored data from django session:
     day = request.session.get('day')
     service = request.session.get('service')
-    print("Valor de user.email:", user.email)
+    print("Valor de user.email:", user.id)
     #Only show the time of the day that has not been selected before:
     hour = checkTime(times, day)
     if request.method == 'POST':
@@ -153,7 +153,7 @@ def bookingSubmit(request):
                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
                     if Appointment.objects.filter(day=day).count() < 11:
                         if Appointment.objects.filter(day=day, time=time).count() < 1:
-                            paciente = get_object_or_404(Paciente, email=user.email)
+                            paciente = get_object_or_404(Paciente, id=user.id)
                             AppointmentForm = Appointment.objects.get_or_create(
                                 user = paciente,
                                 service = service,
@@ -180,9 +180,9 @@ def bookingSubmit(request):
 
 def userPanel(request):
     user = request.user
-    appointments = Appointment.objects.filter(user=user.username).order_by('day', 'time')
+    appointments = Appointment.objects.filter(user=user.id).order_by('day', 'time')
     return render(request, 'userPanel.html', {
-        'user':user.username,
+        'user':user.id,
         'appointments':appointments,
     })
 
@@ -220,7 +220,7 @@ def userUpdate(request, id):
             'id': id,
         })
 
-def userUpdateSubmit(request, id):
+def userUpdateSubmit(request,id):
     user = request.user
     times = [
         "8 AM", "8:30 AM", "9 AM", "9:30 AM", "10 AM", "10:30 AM", "11 AM", "11:30 AM"
@@ -247,7 +247,7 @@ def userUpdateSubmit(request, id):
                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
                     if Appointment.objects.filter(day=day).count() < 11:
                         if Appointment.objects.filter(day=day, time=time).count() < 1 or userSelectedTime == time:
-                            paciente = get_object_or_404(Paciente, email=user.email)
+                            paciente = get_object_or_404(Paciente, id=user.id)
                             AppointmentForm = Appointment.objects.filter(pk=id).update(
                                 user = paciente,
                                 service = service,
@@ -255,7 +255,7 @@ def userUpdateSubmit(request, id):
                                 time = time,
                             ) 
                             messages.success(request, "Agendamento Editado!")
-                            return redirect('index')
+                            return redirect('homePaciente')
                         else:
                             messages.success(request, "O Horário Selecionado já foi reservado!")
                     else:
