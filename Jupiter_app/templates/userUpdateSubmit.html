@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<title>Edit Appointment</title>
+{% load static %}
+
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
+        <title>Cadastro</title>
+    </head>
+
+    <body class="site_body">
+        <header class="site-header">
+            <img class="logo" alt="logo" onclick="window.location.replace('/')"
+                src="{% static 'Jupiter_app/images/logo(1).png' %}">
+        </header>
+            <main class="site-main">
+
+                <h1 class="text-center fPersian mt-3">Editar Agendamento</h1>
+
+                <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black text-center m-5">
+                    <form method="post" action="{% url 'userUpdateSubmit' id %}" class="me-2 ms-2" required>
+                        {% csrf_token %}
+                        
+                        <!--input time-->
+                        <h3 class="text-center fPersian mt-4">Horário:</h3>
+                        <div>
+                            <select class="form-select fs-3 text-center" name="time">
+                                {% for time in times %}
+                                <option value="{{time}}">{{time}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary text-white mt-3 fPersian">Confirmar</button>
+
+                    </form>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div class="button-container-footer">
+                    <button type="button" class="button-base-footer"
+                        onclick="window.alert('Funcionalidade Indisponível')">?</button>
+                </div>
+            </footer>
+    </body>
+</html>

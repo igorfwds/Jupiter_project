@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<title>Staff Panel</title>
+{% load static %}
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
+        <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
+        <title>Cadastro</title>
+    </head>
+
+    <body class="site_body">
+        <header class="site-header">
+            <img class="logo" alt="logo" onclick="window.location.replace('/')"
+                src="{% static 'Jupiter_app/images/logo(1).png' %}">
+        </header>
+
+          <main class="site-main">
+            <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+                <h1 class="text-center mt-5 mb-5">Staff Panel</h1>
+                <input class="form-control form-control-lg fs-3 border border-primary" id="myInput" type="text" placeholder="Search Appointment">
+                <br>
+                
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-hover mx-auto">
+                      <thead>
+                        <tr>
+                          <th class="text-center" scope="col">Time</th>
+                          <th class="text-center" scope="col">Nome</th>
+                          <th class="text-center" scope="col">Médico</th>
+                          <th class="text-center" scope="col">Data</th>
+                        </tr>
+                      </thead>
+                      <tbody id="myTable">
+                          {% for item in items %}
+                        <tr>
+                          <td class="text-center">{{item.time}}</td>
+                          <td class="text-center">{{item.user.nome}}</td>
+                          <td class="text-center">{{item.service}}</td>
+                          <td class="text-center">{{item.day}}</td>
+                        </tr>
+                          {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+
+            </div>
+
+            <!--Staff Panel Search-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(document).ready(function(){
+                  $("#myInput").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function() {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                  });
+                });
+            </script>
+
+          </main>
+
+          <footer class="site-footer">
+              <div class="button-container-footer">
+                  <button type="button" class="button-base-footer"
+                      onclick="window.alert('Funcionalidade Indisponível')">?</button>
+              </div>
+          </footer>
+      </body>
+</html>

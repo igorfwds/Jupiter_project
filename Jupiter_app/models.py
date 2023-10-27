@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
+from django.utils import timezone
 
 
 class Paciente(models.Model):
@@ -34,3 +36,33 @@ class Receituario(models.Model):
     nome = models.CharField(max_length=100)
     data_emissao = models.DateField()
     conteudo = models.FileField(upload_to='receituarios/')
+
+# Marcar Consultas
+
+DOCTOR_CHOICES = (
+    ("Dr. Álvaro Melo - Cardiologia", "Dr. Álvaro Melo - Cardiologia"),
+    ("Dra. Marcele Morais - Endocrinologia", "Dra. Marcele Morais - Endocrinologia"),
+    ("Dr. Júlio Mendonça - Cirurgia Geral", "Dr. Júlio Mendonça - Cirurgia Geral"),
+    ("Dra. Amanda Gonçalves - Ortopedia e Traumatologia", "Dra. Amanda Gonçalves - Ortopedia e Traumatologia"),
+    ("Dr. Pedro Coutinho - Clínica Médica", "Dr. Pedro Coutinho - Clínica Médica"),
+    ("Dra. Beatriz Lemos - Pediatria", "Dra. Beatriz Lemos - Pediatria"),
+    )
+TIME_CHOICES = (
+    ("8:00 AM", "8:00 AM"),
+    ("8:30 AM", "8:30 AM"),
+    ("9:00 AM", "9:00 AM"),
+    ("9:30 AM", "9:30 AM"),
+    ("10:00 AM", "10:00 AM"),
+    ("10:30 AM", "10:30 AM"),
+    ("11:00 AM", "11:00 AM"),
+    ("11:30 AM", "11:30 AM"),
+)
+
+class Appointment(models.Model):
+    user = models.ForeignKey(Paciente, on_delete=models.CASCADE, null=True, blank=True)
+    service = models.CharField(max_length=50, choices=DOCTOR_CHOICES, default="Médico")
+    day = models.DateField(default=datetime.now)
+    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="8 AM")
+    time_ordered = models.DateTimeField(default=datetime.now, blank=True)
+    def __str__(self):
+        return f"{self.user.email} | day: {self.day} | time: {self.time}"

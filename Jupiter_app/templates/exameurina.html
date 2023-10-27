@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-{% load static %}
+{%load static%}
 
-<html lang="pt-br">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -13,39 +13,40 @@
     <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
-    <title>Exames</title>
+    <title>Sumário de Urina</title>
+
+    <style>
+        .centered-image {
+            text-align: center;
+            margin-top: 20px; /* Ajuste a margem conforme necessário */
+        }
+
+        .centered-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+
 </head>
 
 <body>
     <header class="site-header">
-        <img class="logo" alt="logo" onclick="window.location.href = '/homePaciente/'"
+        <img class="logo" alt="logo" onclick="window.location.href = '/homePaciente/exames/'"
             src="{% static 'Jupiter_app/images/logo(1).png' %}">
+        <div class="button-container-header">
+            <button type="button" class="button-base-header" onclick="window.location.replace('/')"
+                id="logout">Logout</button>
 
-    </header>
-    <main class="site-main">
-        <div class="table">
-            <table>
-                <tr>
-                    <th>Médico</th>
-                    <th>Tipo de Exame</th> <!-- Correção aqui -->
-                    <th>Data da Realização</th>
-                    <th>Visualizar Exame</th>
-
-                    <tr>
-                        <td>Dr. Álvaro Melo</td>
-                        <td>Exame de Hemograma</td>
-                        <td>26/03/2022</td>
-                        <td><a href="{% url 'examehemograma' %}" class="button-view">Visualizar</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dra. Marcele Morais</td>
-                        <td>Exame de Urina</td>
-                        <td>08/10/2022</td>
-                        <td><a href="{% url 'exameurina' %}" class="button-view">Visualizar</a></td>
-                    </tr>
-            </table>
         </div>
+    </header>
+
+    <main class="site-main">
+        <div class="centered-image">
+            <img src="{% static 'Jupiter_app/images/exameurina.jpg' %}" alt="Sumário de Urina">
+        </div>
+
     </main>
+
     <footer class="site-footer">
         <div class="button-container-footer">
             <button type="button" class="button-base-footer"

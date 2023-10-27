@@ -27,17 +27,14 @@
             <table>
                 <tr>
                     <th>Médico</th>
-                    <th>Conteúdo da receita</th> <!-- Correção aqui -->
                     <th>Data da emissão</th>
+                    <th>Visualizar Receita</th>
                 </tr>
-                {% for item in receituarios %}
                 <tr>
-                    <td>{{ item.nomeMedicoReceita }}</td>
-                    <td>{{ item.conteudoReceita }}</td>
-                    <td>{{ item.dataReceita }}</td>
-                    <td><a href="{% url 'visualizar_receituarios' item.id %}" class="button-view">Visualizar</a></td>
+                    <td>Dr. Júlio Mendonça</td>
+                    <td>29/05/2020</td>
+                    <td><a href="{% url 'receita' %}" class="button-view">Visualizar</a></td>
                 </tr>
-                {% endfor %}
             </table>
         </div>
     </main>
