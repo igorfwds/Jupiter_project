@@ -93,8 +93,8 @@
 
 
 <h3 align="center">Diagrama de Atividades:</h3>
-![image](https://github.com/igorfwds/Jupiter_project/assets/132527386/d049a1d3-5988-4440-bab4-335d3edd6fa5)
+<img src="imagens/diag_entrega2.jpg" alt="Diagrama de Atividades: foto 1">
 
 
 <h3 align="center">Issue/Bug Tracker:</h3>
-<img width="919" alt="image" src="https://github.com/igorfwds/Jupiter_project/assets/132527386/f6ed063a-5ee2-44eb-be4c-38ea2d711b03">
+<img width="919" alt="imagebugtracker" src="https://github.com/igorfwds/Jupiter_project/assets/132527386/f6ed063a-5ee2-44eb-be4c-38ea2d711b03">
