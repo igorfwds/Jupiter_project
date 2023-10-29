@@ -30,7 +30,7 @@
 <h2>Primeira Entrega 📦</h2>
 
 
-<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Protótipo</a></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Protótipo Lo-Fi</a></p>
 
 
 <h3 align="center">Quadro de Sprint no Jira:</h3>
@@ -67,3 +67,34 @@
 
 <h3 align="center">Issue/Bug Tracker:</h3>
 <img src="imagens/bugtracker_entrega2.jpg" alt="Bug Tracker: foto 1">
+
+
+<h2>Terceira Entrega 📦</h2>
+
+
+<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Protótipo Lo-Fi</a></p>
+
+
+<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Deploy</a></p>
+
+
+<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
+
+
+<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Testes do Sistema (E2E) Automatizados</a></p>
+
+
+<h3 align="center">Relato Pair Programming</h3>
+<p>Na continuação de nossa jornada no projeto, a Programação em Pares tem sido uma ferramenta crucial para nossa evolução. Durante esse período, temos aprofundado nossa compreensão das vantagens que o sistema oferece, ao mesmo tempo em que enfrentamos e superamos desafios. Realizamos modificações significativas que nos permitiram manter o projeto em constante evolução, mantendo-o alinhado com nossos objetivos. A abordagem de programação em pares continuou a fortalecer nossos laços profissionais, enriquecendo nosso conhecimento e experiência ao incorporar diferentes perspectivas. Essa colaboração estreita resultou em decisões mais robustas e ponderadas.</p>
+
+
+<h3 align="center">Quadro de Sprint no Jira:</h3>
+<img src="imagens/quadro_sprint1_entrega2.jpg" alt="Quadro de sprint no jira: foto 1">
+
+
+<h3 align="center">Diagrama de Atividades:</h3>
+![image](https://github.com/igorfwds/Jupiter_project/assets/132527386/d049a1d3-5988-4440-bab4-335d3edd6fa5)
+
+
+<h3 align="center">Issue/Bug Tracker:</h3>
+<img width="919" alt="image" src="https://github.com/igorfwds/Jupiter_project/assets/132527386/f6ed063a-5ee2-44eb-be4c-38ea2d711b03">
