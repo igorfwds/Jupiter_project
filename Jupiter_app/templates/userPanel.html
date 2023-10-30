@@ -19,25 +19,28 @@
 
     <body class="site_body">
         <header class="site-header">
-            <img class="logo" alt="logo" onclick="window.location.replace('/')"
+            <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')"
                 src="{% static 'Jupiter_app/images/logo(1).png' %}">
         </header>
-            <main class="site-main">
+            <!-- <main class="site-main"> -->
 
-                <h1 class=" ms-5 mt-5 ">User Panel</h1>
+                <!-- <h1 class=" ms-5 mt-5 ">User Panel</h1>
 
                 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
                     <h2 class="">Informações do Usuário:</h2>
                     <ul class="list-group fs-4 mt-3">
-                            <li class="list-group mt-2">Nome: {{user.nome }}</li>
+                            <li class="list-group mt-2">Nome: {{ user.nome }}</li>
                             <li class="list-group mt-2">E-mail: {{ user.email }}</li>
                     </ul>
-                </div>
+                </div> -->
 
+               
+               
                 <!--Appointment Loop-->
-                {% if appointments.count > 0 %}
+            
+                <!-- {% if appointments.count > 0 %}
                 <div class="mt-5 ">
-                    <h1 class=" ms-5">Agendamentos:</h1>
+                    <h1 class=" ms-5" style="font-size: 40px; margin-bottom: 25px; font-weight: bold;">Agendamentos:</h1>
                     <div class="shadow p-4 mb-3 bg-body bg-body rounded text-black  m-5">
                         {% for appointment in appointments %}
                         <div class="list-group fs-4 border p-3 mb-3">
@@ -52,7 +55,33 @@
                     </div>
                 </div>
                 {% endif %}
+                <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/'" >voltar</a></button>
+            </main> -->
+
+
+            <main class="site-main">
+                {% if appointments.count > 0 %}
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th class="agendamento-header" style="font-weight: bold;">Data da Realização</th>
+                            <th class="agendamento-header" style="font-weight: bold;">Horário</th> 
+                            <th class="agendamento-header" style="font-weight: bold;">Médico</th>
+                            <th class="agendamento-header" style="font-weight: bold;">Edição</th>
+                            {% for appointment in appointments %}
+                            <tr>
+                                <td><p class="list-group mt-2" >{{ appointment.day }}</p></td>
+                                <td><p class="list-group mt-2" >{{ appointment.time }}</p></td>
+                                <td><p class="list-group mt-2" >{{ appointment.service }}</p></td>
+                                <td><a class="btn btn-primary rounded-3 p-2" href="{% url 'userUpdate' appointment.id %}">Editar Agendamento</a></td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                {% endif %}
+                    <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/'" >voltar</a></button>
+                </div>
             </main>
+
 
             <footer class="site-footer">
                 <div class="button-container-footer">

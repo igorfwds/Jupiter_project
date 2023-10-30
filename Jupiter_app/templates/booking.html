@@ -19,7 +19,7 @@
 
     <body class="site_body">
         <header class="site-header">
-            <img class="logo" alt="logo" onclick="window.location.replace('/')"
+            <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')"
                 src="{% static 'Jupiter_app/images/logo(1).png' %}">
         </header>
             <main class="site-main">
@@ -52,9 +52,10 @@
                             </div>
 
                             <br/>
-                            <button type="submit" class="btn btn-primary text-white">Continuar</button>
+                            <button type="submit" style="background-color: green;" class="btn btn-primary text-white">Continuar</button>
                         </div>
                     </form>
+                    <button class="button-base-header" style="background-color: grey;"><a onclick="window.location.href = '/homePaciente/'" >voltar</a></button>
                 </div>
             </main>
 

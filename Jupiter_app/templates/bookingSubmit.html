@@ -19,7 +19,7 @@
 
     <body class="site_body">
         <header class="site-header">
-            <img class="logo" alt="logo" onclick="window.location.replace('/')"
+            <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')"
                 src="{% static 'Jupiter_app/images/logo(1).png' %}">
         </header>
             <main class="site-main">
@@ -39,10 +39,11 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary text-white mt-3 fPersian">Confirmar</button>
+                        <button type="submit" class="btn btn-primary text-white mt-3 fPersian" style="background-color: green;">Confirmar</button>
 
                     </form>
                 </div>
+                <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/booking/'" >voltar</a></button>
             </main>
 
             <footer class="site-footer">
