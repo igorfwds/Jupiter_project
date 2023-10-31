@@ -24,3 +24,12 @@ receita = Receituario(usuario=user, nome='Receita de Garasone', data_emissao='20
 receita.save()
 
 #altere conforme necessário
+
+from Jupiter_app.models import Appointment
+
+# Para excluir um agendamento específico (substitua 'id_do_agendamento' pelo ID real do agendamento)
+agendamento = Appointment.objects.get(id=id_do_agendamento)
+agendamento.delete()
+
+# Para excluir todos os agendamentos que atendam a determinados critérios (por exemplo, todos os agendamentos de um paciente específico)
+Appointment.objects.filter(user=paciente).delete()

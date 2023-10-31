@@ -27,7 +27,7 @@ password.send_keys("sele")
 login = driver.find_element(By.ID, "login")
 login.click()
 
-time.sleep(5)
+time.sleep(2)
 
 appointments = driver.find_element(By.ID, "agendamentos")
 appointments.click()

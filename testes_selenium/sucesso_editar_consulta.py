@@ -30,23 +30,20 @@ login.click()
 appointments = driver.find_element(By.ID, "agendamentos")
 appointments.click()
 
-WebDriverWait(driver, 7)
-
 time.sleep(5)
 
-select = driver.find_element(By.XPATH, "//a[contains(@href, '/user-update/4')]")
+select = driver.find_element(By.XPATH, "//a[contains(@href, '/user-update/7')]")
 select.click()
 
 doctor = driver.find_element(By.XPATH, "/html/body/main/div/form/div[1]/select/option[6]")
 doctor.click()
 
-date = driver.find_element(By.XPATH, "/html/body/main/div/form/div[2]/select/option[10]")
+date = driver.find_element(By.XPATH, "/html/body/main/div/form/div[2]/select/option[9]")
 date.click()
 
-time.sleep(4)
 button = driver.find_element(By.XPATH, "/html/body/main/div/form/button[1]")
 button.click()
-
+time.sleep(3)
 app_time = driver.find_element(By.XPATH,"/html/body/main/div/form/div/select/option[3]")
 app_time.click()
 

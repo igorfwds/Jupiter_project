@@ -30,7 +30,7 @@ login.click()
 appointments = driver.find_element(By.ID, "agendamentos")
 appointments.click()
 
-time.sleep(5)
+time.sleep(2)
 
 select = driver.find_element(By.XPATH, "//a[contains(@href, '/user-update/1')]")
 select.click()
