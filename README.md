@@ -72,16 +72,16 @@
 <h2>Terceira Entrega 📦</h2>
 
 
-<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Protótipo Lo-Fi</a></p>
+<p align="center"><a href="https://youtu.be/fPSGY96swlo">ScreenCast - Protótipo Lo-Fi</a></p>
 
 
-<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Deploy</a></p>
+<p align="center"><a href="https://youtu.be/pE0cxlScEe8">ScreenCast - Deploy</a></p>
 
 
-<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
+<p align="center"><a href="https://youtu.be/AeFZcY-xZvc">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
 
 
-<p align="center"><a href="https://www.youtube.com/watch?v=d9tIOqOFgMM">ScreenCast - Testes do Sistema (E2E) Automatizados</a></p>
+<p align="center"><a href="https://youtu.be/P18R2akQjBI">ScreenCast - Testes do Sistema (E2E) Automatizados</a></p>
 
 
 <h3 align="center">Relato Pair Programming</h3>
@@ -89,12 +89,12 @@
 
 
 <h3 align="center">Quadro de Sprint no Jira:</h3>
-<img src="imagens/quadro_sprint1_entrega2.jpg" alt="Quadro de sprint no jira: foto 1">
+<img src="imagens/quadro_sprint2_entrega3.jpg" alt="Quadro de sprint no jira: foto 1">
 
 
 <h3 align="center">Diagrama de Atividades:</h3>
-<img src="imagens/diag_entrega2.jpg" alt="Diagrama de Atividades: foto 1">
+<img src="imagens/diag_entrega3.jpg" alt="Diagrama de Atividades: foto 1">
 
 
 <h3 align="center">Issue/Bug Tracker:</h3>
-<img width="919" alt="imagebugtracker" src="https://github.com/igorfwds/Jupiter_project/assets/132527386/f6ed063a-5ee2-44eb-be4c-38ea2d711b03">
+<img src="imagens/bugtracker_entrega3.jpg" alt="Bug Tracker: foto 1">
