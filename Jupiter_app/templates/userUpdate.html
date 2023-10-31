@@ -27,7 +27,7 @@
 
                 <!--if 24hrs before nobat-->
                 {% if delta24 == True %}
-                <h1 class="text-center  mt-3">Editar Agendamento/h1>
+                <h1 class="text-center  mt-3">Editar Agendamento</h1>
 
                 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
                     <form method="post" action="{% url 'userUpdate' id %}" class="me-2 ms-2" required>
@@ -42,7 +42,7 @@
                                 <option value="Dr. Júlio Mendonça - Cirurgia Geral">Dr. Júlio Mendonça - Cirurgia Geral</option>
                                 <option value="Dra. Amanda Gonçalves - Ortopedia e Traumatologia">Dra. Amanda Gonçalves - Ortopedia e Traumatologia</option>
                                 <option value="Dr. Pedro Coutinho - Clínica Médica">Dr. Pedro Coutinho - Clínica Médica</option>
-                                <option value="Dra. Beatriz Lemos - Pediatria">Dr. Pedro Coutinho - Clínica Médica</option>
+                                <option value="Dra. Beatriz Lemos - Pediatria">Dra. Beatriz Lemos - Pediatria</option>
                             </select>
                         </div>
                             <!--input day-->
@@ -56,7 +56,8 @@
                             </div>
 
                             <br/>
-                            <button type="submit" class="btn btn-primary text-white">Continuar</button>
+                            <button type="submit" style="background-color: green;" class="btn btn-primary text-white">Continuar</button>
+                            <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/user-panel/'" >voltar</a></button>
                         </div>
                     </form>
                 </div>
@@ -64,8 +65,8 @@
                 {% else %}
 
                 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 text-center fPersian">
-                    <h1 class="text-danger">A edição de agendamentos só está disponível 24 horas antes do agendamento!</h1>
-                    <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Returnar para os Agendamentos</a>
+                    <h1 class="text-danger">A edição de agendamentos só está disponível 24 horas antes da consulta!</h1>
+                    <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Retornar para os Agendamentos</a>
                 </div>
 
                 {% endif %}
