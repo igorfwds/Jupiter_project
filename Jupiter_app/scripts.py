@@ -19,6 +19,8 @@ user = User.objects.get(username='jvfg@cesar.school')
 
 receita = Receituario(usuario=user, nome='Receita de Garasone', data_emissao='2023-10-02', conteudo='Aplicar 3 gotas em cada narina 4x ao dia')
 
+#para mais palavras cruzadas, acesse: https://oglobo.globo.com/jogos/palavras-cruzadas/
+
 receita.save()
 
 #altere conforme necessário
