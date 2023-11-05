@@ -89,12 +89,12 @@
 
 
 <h3 align="center">Quadro de Sprint no Jira:</h3>
-<img src="imagens/quadro_sprint2_entrega3.jpg" alt="Quadro de sprint no jira: foto 1">
+<img src="imagens/quadro_sprint2_entrega3.jpeg" alt="Quadro de sprint no jira: foto 1">
 
 
 <h3 align="center">Diagrama de Atividades:</h3>
-<img src="imagens/diag_entrega3.jpg" alt="Diagrama de Atividades: foto 1">
+<img src="imagens/diag_entrega3.jpeg" alt="Diagrama de Atividades: foto 1">
 
 
 <h3 align="center">Issue/Bug Tracker:</h3>
-<img src="imagens/bugtracker_entrega3.jpg" alt="Bug Tracker: foto 1">
+<img src="imagens/bugtracker_entrega3.png" alt="Bug Tracker: foto 1">
