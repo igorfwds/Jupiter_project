@@ -13,7 +13,20 @@
     <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
-    <title>Portal de Atividades</title>
+    <title>Recibo</title>
+
+    <style>
+        .centered-image {
+            text-align: center;
+            margin-top: 20px; /* Ajuste a margem conforme necessário */
+        }
+
+        .centered-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -28,19 +41,11 @@
     </header>
 
     <main class="site-main">
-        <div>
-            <button id="visualizar_exames" type="button" class="button_color"
-                onclick="window.location.replace('exames/ ')">Visualizar Exames</button>
-            <button id="visualizar_receituario" type="button" class="button_color"
-                onclick="window.location.replace('receituarios/ ')">Visualizar Receituários</button>
-            <button id="visualizar_recibo" type="button" class="button_color"
-                onclick="window.location.replace('recibos/')">Visualizar Recibos</button>
-            <button id="marcar_consulta" type="button" class="button_color"
-                onclick="window.location.replace('booking/ ')">Marcar Consulta</button>
-            <button id="agendamentos" type="button" class="button_color"
-                onclick="window.location.replace('user-panel ')">Agendamentos</button>
+        <div class="centered-image">
+            <img src="{% static 'Jupiter_app/images/recibo.png' %}" alt="Recibo"  width="600" height="470">
         </div>
 
+        <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/recibos/'" >voltar</a></button>
     </main>
 
     <footer class="site-footer">

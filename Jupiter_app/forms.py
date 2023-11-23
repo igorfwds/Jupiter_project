@@ -1,5 +1,5 @@
 from django import forms
-from .models import Paciente, Exame, Receituario
+from .models import Paciente, Exame, Receituario, Recibo
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate  
 
@@ -71,4 +71,7 @@ class ReceituarioForm(forms.ModelForm):
         fields = ['nome', 'data_emissao', 'conteudo']
 
 
-
+class ReciboForm(forms.ModelForm):
+    class Meta:
+        model = Recibo
+        fields = ['nome', 'data_realizacao', 'conteudo']

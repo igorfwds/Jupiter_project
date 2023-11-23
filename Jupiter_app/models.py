@@ -37,6 +37,13 @@ class Receituario(models.Model):
     data_emissao = models.DateField()
     conteudo = models.FileField(upload_to='receituarios/')
 
+
+class Recibo(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    nome = models.CharField(max_length=100)
+    data_realizacao = models.DateField()
+    conteudo = models.FileField(upload_to='recibos/')
+
 # Marcar Consultas
 
 DOCTOR_CHOICES = (

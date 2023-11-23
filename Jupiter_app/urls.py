@@ -22,4 +22,6 @@ urlpatterns = [
     path('user-update/<int:id>', views.userUpdate, name='userUpdate'),
     path('user-update-submit/<int:id>', views.userUpdateSubmit, name='userUpdateSubmit'),
     path('staff-panel', views.staffPanel, name='staffPanel'),
+    path('homePaciente/recibos/',views.exibir_recibos, name='exibir_recibos'),
+    path('homePaciente/recibos/recibopag', views.recibopag, name='recibopag'),
 ]

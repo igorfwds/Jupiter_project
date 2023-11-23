@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -13,36 +13,32 @@
     <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
-    <title>Portal de Atividades</title>
+    <title>Recibos</title>
 </head>
 
 <body>
     <header class="site-header">
         <img class="logo" alt="logo" onclick="window.location.href = '/homePaciente/'"
             src="{% static 'Jupiter_app/images/logo(1).png' %}">
-        <div class="button-container-header">
-            <button type="button" class="button-base-header" onclick="window.location.replace('/')"
-                id="logout">Logout</button>
 
-        </div>
     </header>
-
     <main class="site-main">
-        <div>
-            <button id="visualizar_exames" type="button" class="button_color"
-                onclick="window.location.replace('exames/ ')">Visualizar Exames</button>
-            <button id="visualizar_receituario" type="button" class="button_color"
-                onclick="window.location.replace('receituarios/ ')">Visualizar Receituários</button>
-            <button id="visualizar_recibo" type="button" class="button_color"
-                onclick="window.location.replace('recibos/')">Visualizar Recibos</button>
-            <button id="marcar_consulta" type="button" class="button_color"
-                onclick="window.location.replace('booking/ ')">Marcar Consulta</button>
-            <button id="agendamentos" type="button" class="button_color"
-                onclick="window.location.replace('user-panel ')">Agendamentos</button>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Médico</th>
+                    <th>Data da Realização</th>
+                    <th>Visualizar Recibo</th>
+                </tr>
+                <tr>
+                    <td>Dr. Felipe Souza</td>
+                    <td>01/02/2018</td>
+                    <td><a href="{% url 'recibopag' %}" class="button-view">Visualizar</a></td>
+                </tr>
+            </table>
         </div>
-
+        <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/'" >voltar</a></button>
     </main>
-
     <footer class="site-footer">
         <div class="button-container-footer">
             <button type="button" class="button-base-footer"

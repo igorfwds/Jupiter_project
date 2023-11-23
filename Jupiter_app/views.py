@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import CadastroForm
+from .forms import CadastroForm, ReciboForm
 from .models import *  
 from datetime import datetime, timedelta
 
@@ -93,6 +93,14 @@ def exameurina(request):
 
 def receita(request):
     return render(request, 'receitavisu.html')
+
+def exibir_recibos(request):
+    recibos = Recibo.objects.all()
+
+    return render(request, 'recibos.html', {'recibos': recibos})
+
+def recibopag(request):
+    return render(request, 'recibopag.html')
 
 
 
