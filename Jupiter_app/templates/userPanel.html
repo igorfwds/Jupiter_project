@@ -68,12 +68,14 @@
                             <th class="agendamento-header" style="font-weight: bold;">Horário</th> 
                             <th class="agendamento-header" style="font-weight: bold;">Médico</th>
                             <th class="agendamento-header" style="font-weight: bold;">Edição</th>
+                            <th class="agendamento-header" style="font-weight: bold;">Cancelamento</th>
                             {% for appointment in appointments %}
                             <tr>
                                 <td><p class="list-group mt-2" >{{ appointment.day }}</p></td>
                                 <td><p class="list-group mt-2" >{{ appointment.time }}</p></td>
                                 <td><p class="list-group mt-2" >{{ appointment.service }}</p></td>
                                 <td><a class="btn btn-primary rounded-3 p-2" href="{% url 'userUpdate' appointment.id %}">Editar Agendamento</a></td>
+                                <td><a class="btn btn-danger rounded-3 p-2" href="{% url 'userCancel' appointment.id %}">Cancelar Agendamento</a></td>
                             </tr>
                             {% endfor %}
                     </table>

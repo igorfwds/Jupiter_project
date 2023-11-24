@@ -24,4 +24,5 @@ urlpatterns = [
     path('staff-panel', views.staffPanel, name='staffPanel'),
     path('homePaciente/recibos/',views.exibir_recibos, name='exibir_recibos'),
     path('homePaciente/recibos/recibopag', views.recibopag, name='recibopag'),
+    path('user-cancel/<int:id>', views.userCancel, name='userCancel'),
 ]

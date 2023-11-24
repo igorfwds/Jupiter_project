@@ -6,6 +6,9 @@ from django.contrib import messages
 from .forms import CadastroForm, ReciboForm
 from .models import *  
 from datetime import datetime, timedelta
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 
 def paciente_login(request):
@@ -193,6 +196,12 @@ def userPanel(request):
         'user':user.id,
         'appointments':appointments,
     })
+
+
+def userCancel(request, id):
+    appointment = Appointment.objects.get(pk=id)
+    appointment.delete()
+    return redirect('userPanel')
 
 def userUpdate(request, id):
     appointment = Appointment.objects.get(pk=id)
