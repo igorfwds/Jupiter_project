@@ -1,8 +1,7 @@
 from django import forms
 from .models import Paciente, Exame, Receituario, Recibo
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate  
-
+from django.contrib.auth import authenticate
 
 
 class LoginForm(AuthenticationForm):
@@ -15,11 +14,11 @@ class LoginForm(AuthenticationForm):
         senha = cleaned_data.get('senha')
 
         if email is not None and senha:
-            self.user_cache = authenticate(self.request, username=email, password=senha)
+            self.user_cache = authenticate(
+                self.request, username=email, password=senha)
             if self.user_cache is None:
                 raise forms.ValidationError('Usuário ou senha incorreto.')
         return self.cleaned_data
-
 
 
 class CadastroForm(forms.ModelForm):
@@ -30,7 +29,7 @@ class CadastroForm(forms.ModelForm):
     endereco = forms.CharField(max_length=100)
     complemento = forms.CharField(max_length=100)
     email = forms.EmailField(max_length=254)
-    celular = forms.CharField(max_length=14 )
+    celular = forms.CharField(max_length=14)
     senha = forms.CharField(max_length=100)
     rg = forms.CharField(max_length=12)
     cep = forms.CharField(max_length=9,)
@@ -44,11 +43,11 @@ class CadastroForm(forms.ModelForm):
         model = Paciente
         fields = [
             'nome',
-            'cpf', 
-            'data_nascimento', 
-            'endereco', 
-            'complemento', 
-            'email', 
+            'cpf',
+            'data_nascimento',
+            'endereco',
+            'complemento',
+            'email',
             'celular',
             'senha',
             'rg',
@@ -60,10 +59,12 @@ class CadastroForm(forms.ModelForm):
             'altura'
         ]
 
+
 class ExameForm(forms.ModelForm):
     class Meta:
         model = Exame
         fields = ['nome', 'data_realizacao', 'resultado']
+
 
 class ReceituarioForm(forms.ModelForm):
     class Meta:

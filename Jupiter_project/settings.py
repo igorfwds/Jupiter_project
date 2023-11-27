@@ -28,8 +28,8 @@ if NOT_PROD:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
     # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = 'A SECRET KEY DO SEU PROJETO' #Testar colocar a secret key aqui
-    ALLOWED_HOSTS = ['djangodeployjupiter.azurewebsites.net','127.0.0.1']
+    SECRET_KEY = 'A SECRET KEY DO SEU PROJETO'  # Testar colocar a secret key aqui
+    ALLOWED_HOSTS = ['djangodeployjupiter.azurewebsites.net', '127.0.0.1']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -58,7 +58,7 @@ else:
             'OPTIONS': {'sslmode': 'require'},
         }
     }
-    
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -68,14 +68,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    #Adicionar whitenoise na lista de aplicativos instalados
+    # Adicionar whitenoise na lista de aplicativos instalados
     "whitenoise.runserver_nostatic",
     "Jupiter_app",
+
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # Add whitenoise middleware after the security middleware                             
+    # Add whitenoise middleware after the security middleware
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -148,7 +149,8 @@ USE_TZ = True
 STATIC_URL = os.environ.get('DJANGO_STATIC_URL', "/static/")
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+STATICFILES_STORAGE = (
+    'whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
