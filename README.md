@@ -98,3 +98,34 @@
 
 <h3 align="center">Issue/Bug Tracker:</h3>
 <img src="imagens/bugtracker_entrega3.png" alt="Bug Tracker: foto 1">
+
+
+<h2>Quarta Entrega 📦</h2>
+
+
+<p align="center"><a href="https://youtu.be/fPSGY96swlo">ScreenCast - Protótipo Lo-Fi</a></p>
+
+
+<p align="center"><a href="https://youtu.be/pE0cxlScEe8">ScreenCast - Deploy</a></p>
+
+
+<p align="center"><a href="https://youtu.be/AeFZcY-xZvc">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
+
+
+<p align="center"><a href="https://youtu.be/P18R2akQjBI">ScreenCast - Testes do Sistema (E2E) Automatizados</a></p>
+
+
+<h3 align="center">Relato Pair Programming</h3>
+<p>Encerramos nossa jornada na Programação em Pares com uma profunda apreciação pela impactante colaboração que experimentamos. Ao longo desse período, a prática intensiva da programação em duplas não apenas ampliou nossa compreensão do sistema, mas também fortaleceu nossa habilidade de enfrentar desafios complexos de maneira conjunta. Formamos um time altamente capacitado, cuja força reside na colaboração contínua e na sinergia que desenvolvemos. Estamos confiantes de que a experiência adquirida nos capacita a enfrentar desafios futuros.</p>
+
+
+<h3 align="center">Quadro de Sprint no Jira:</h3>
+<img src="imagens/quadro_sprint2_entrega3.jpeg" alt="Quadro de sprint no jira: foto 1">
+
+
+<h3 align="center">Diagrama de Atividades:</h3>
+<img src="imagens/diag_entrega3.jpeg" alt="Diagrama de Atividades: foto 1">
+
+
+<h3 align="center">Issue/Bug Tracker:</h3>
+<img src="imagens/bugtracker_entrega3.png" alt="Bug Tracker: foto 1">
