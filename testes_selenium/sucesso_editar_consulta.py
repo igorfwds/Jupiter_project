@@ -7,13 +7,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
-options = Options()
-options.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 driver.get("http://127.0.0.1:8000")
-driver.maximize_window()
 
 button = driver.find_element(By.ID, "login")
 button.click()
