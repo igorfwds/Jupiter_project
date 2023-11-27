@@ -33,25 +33,25 @@
                 {% csrf_token %}
                 <div class="content-container">
                     <div class="obrigatorio">
-                        <label for="nome">Nome: </label>
+                        <label for="nome">Nome*: </label>
                         <input id="nome" type="text" name="nome" maxlength="100" required>
-                        <label for="cpf">CPF: </label>
+                        <label for="cpf">CPF*: </label>
                         <input id="cpf" type="text" name="cpf" maxlength="14" required>
-                        <label for="data_nascimento">Data de Nascimento: </label>
+                        <label for="data_nascimento">Data de Nascimento*: </label>
                         <input id="data_nascimento" type="date" name="data_nascimento" required>
-                        <label for="Endereco">Endereço: </label>
+                        <label for="Endereco">Endereço*: </label>
                         <input id="endereco"type="text" name="endereco" maxlength="100" required>
-                        <label for="complemento">Complemento:</label>
+                        <label for="complemento">Complemento*:</label>
                         <input id="complemento" type="text" name="complemento" maxlength="100">
-                        <label for="Email">E-mail: </label>
+                        <label for="Email">E-mail*: </label>
                         <input id="email" type="email" name="email" maxlength="254" required>
-                        <label for="celular">Celular: </label>
+                        <label for="celular">Celular*: </label>
                         <input id="celular" type="text" name="celular" maxlength="13" required>
-                        <label for="senha">Senha:</label>
+                        <label for="senha">Senha*:</label>
                         <input id="senha" type="text" name="senha" maxlength="100" required>
-                        <label for="rg">RG:</label>
+                        <label for="rg">RG*:</label>
                         <input id="rg" type="text" name="rg" maxlength="12" required>
-                        <label for="cep">Cep:</label>
+                        <label for="cep">Cep*:</label>
                         <input id="cep" type="text" name="cep" maxlength="9" required>
                     </div>
                     <br>
@@ -80,7 +80,7 @@
     <footer class="site-footer">
         <div class="button-container-footer">
             <button type="button" class="button-base-footer"
-                onclick="window.alert('Funcionalidade Indisponível')">?</button>
+    onclick="window.alert('Preencha suas informações com cuidado. O seu E-MAIL será usado para logar na sua conta Jupiter!')">?</button>
         </div>
     </footer>
 </body>

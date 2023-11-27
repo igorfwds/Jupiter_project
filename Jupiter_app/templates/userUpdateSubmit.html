@@ -21,7 +21,7 @@
 
     <body class="site_body">
         <header class="site-header">
-            <img class="logo" alt="logo" onclick="window.location.replace('/')"
+            <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')"
                 src="{% static 'Jupiter_app/images/logo(1).png' %}">
         </header>
             <main class="site-main">
@@ -43,15 +43,15 @@
                         </div>
 
                         <button type="submit" style="background-color: green;" class="btn btn-primary text-white mt-3 fPersian">Confirmar alteração</button>
-
                     </form>
                 </div>
+                
             </main>
 
             <footer class="site-footer">
                 <div class="button-container-footer">
                     <button type="button" class="button-base-footer"
-                        onclick="window.alert('Funcionalidade Indisponível')">?</button>
+                        onclick="window.alert('Essa é a etapa final do seu reagendamento de consulta. Atente-se novamente ao horário desejado, consultas não poderão ser reagendadas com menos de 24 horas de antecedência. Ao clicar no botão CONFIRMAR, os dados da sua consulta já estarão disponíveis na sua seção de AGENDAMENTOS.')">?</button>
                 </div>
             </footer>
     </body>
