@@ -52,8 +52,8 @@ class CancelarConsultaTest(unittest.TestCase):
             cancel_button.click()
 
             # Aguardar até que o campo de CPF seja visível
-            cpf_input = self.wait.until(EC.presence_of_element_located(
-                (By.CSS_SELECTOR, 'input[name="cpf"]')))
+            cpf_input = self.wait.until(
+                EC.element_to_be_clickable((By.ID, "cpfInput")))
 
             # Preencher o campo de CPF
             cpf_input.send_keys("123666")

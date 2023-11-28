@@ -5,20 +5,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
 class VisualizarReciboTest(unittest.TestCase):
 
     def setUp(self):
-        # Configuração do driver do Chrome
-        options = webdriver.ChromeOptions()
-        self.browser = webdriver.Chrome(service=Service(
-            ChromeDriverManager().install()), options=options)
-
+        self.browser = webdriver.Chrome()
         self.browser.get('https://djangodeployjupiter.azurewebsites.net')
-        time.sleep(3)  # Ajuste conforme necessário
+        time.sleep(3)
 
     def test_visualizar_recibo(self):
         # Realizar o login

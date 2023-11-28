@@ -1,54 +1,31 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
-class CancelarConsultaTest(unittest.TestCase):
+class LoginMessageTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome()
         self.browser.get('https://djangodeployjupiter.azurewebsites.net')
+
+    def test_login_message(self):
+        # Navigate to the login page
+        self.browser.get('https://djangodeployjupiter.azurewebsites.net')
+
+        # Wait for the page to load
         time.sleep(3)
 
-    def test_mensagem_exibida(self):
-        # Navegar para a página inicial do paciente ou qualquer página relevante
-        button = self.browser.find_element(By.ID, "login")
-        button.click()
+        # Locate the element containing the message
+        message_element = self.browser.find_element(
+            By.XPATH, '//button[@onclick="window.alert(\'Essa é a tela de login, preencha com os campos de e-mail e senha com os dados registrados no momento do cadastro. Se ainda não possui cadastro, clique no ícone do canto superior esquerdo e procure o botão CADASTRE-SE\')"]')
 
-        email = self.browser.find_element(By.ID, "email")
-        email.send_keys("sele@nium.com")
+        # Get the text of the element
+        message_text = message_element.get_attribute('onclick')
 
-        password = self.browser.find_element(By.ID, "senha")
-        password.send_keys("sele")
-
-        login = self.browser.find_element(By.ID, "login")
-        login.click()
-
-        # Aguarde um tempo suficiente após o login antes de prosseguir
-        time.sleep(5)  # Ajuste conforme necessário
-        self.browser.get(
-            'https://djangodeployjupiter.azurewebsites.net/homePaciente/')
-
-    # Aguardar a renderização da página
-        time.sleep(3)
-
-    # Verificar se a mensagem está presente no HTML
-    try:
-        question_mark = self.browser.find_element(
-            By.XPATH, '//*[contains(text(), "Essa é sua lista de consultas marcadas")]')
-        question_mark.click()
-        time.sleep(3)
-        mensagem_element = self.browser.find_element(
-            By.XPATH, '//*[contains(text(), "Essa é sua lista de consultas marcadas")]')
-        self.assertTrue(mensagem_element.is_displayed(),
-                        "Mensagem não encontrada ou não visível.")
-        print("Mensagem encontrada:", mensagem_element.text)
-    except Exception as e:
-        print("Erro ao encontrar mensagem:", e)
+        # Assert that the message is present
+        self.assertIn('Essa é a tela de login, preencha com os campos de e-mail e senha com os dados registrados no momento do cadastro. Se ainda não possui cadastro, clique no ícone do canto superior esquerdo e procure o botão CADASTRE-SE', message_text)
 
     def tearDown(self):
         self.browser.quit()
