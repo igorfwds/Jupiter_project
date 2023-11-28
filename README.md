@@ -109,7 +109,7 @@
 <p align="center"><a href="https://youtu.be/N5A83yawNII">ScreenCast - Deploy</a></p>
 
 
-<p align="center"><a href="https://youtu.be/AeFZcY-xZvc">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
+<p align="center"><a href="https://youtu.be/iQB94hz7CZE">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
 
 
 <p align="center"><a href="https://youtu.be/P18R2akQjBI">ScreenCast - Testes do Sistema (E2E) Automatizados</a></p>
