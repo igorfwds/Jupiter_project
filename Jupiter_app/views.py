@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.conf import settings
 from .forms import CadastroForm, ReciboForm
@@ -142,59 +142,53 @@ def booking(request):
     })
 
 # alteração para comitar pra azure
-
 def bookingSubmit(request):
-    user = request.user
     times = [
         "8 AM", "8:30 AM", "9 AM", "9:30 AM", "10 AM", "10:30 AM", "11 AM", "11:30 AM"
     ]
     today = datetime.now()
     minDate = today.strftime('%Y-%m-%d')
-    deltatime = today + timedelta(days=21)
-    strdeltatime = deltatime.strftime('%Y-%m-%d')
-    maxDate = strdeltatime
+    maxDate = (today + timedelta(days=21)).strftime('%Y-%m-%d')
 
-    # Get stored data from django session:
-    day = request.session.get('day')
+    # Recupera 'service' e 'day' da sessão
     service = request.session.get('service')
-    print("Valor de user.email:", user.id)
-    # Only show the time of the day that has not been selected before:
-    hour = checkTime(times, day)
-    if request.method == 'POST':
-        time = request.POST.get("time")
-        date = dayToWeekday(day)
+    day = request.session.get('day')
 
-        if service != None:
+    # Verifica se os valores foram armazenados na sessão
+    if not service or not day:
+        messages.error(request, "Informações de serviço ou data não encontradas.")
+        return redirect('booking')
+
+    if request.method == 'POST':
+        paciente_cpf = request.POST.get('paciente_cpf')
+        time = request.POST.get('time')
+
+        try:
+            paciente = Paciente.objects.get(cpf=paciente_cpf)
+
+            # Verifica se o horário e o dia estão disponíveis
             if day <= maxDate and day >= minDate:
-                if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
-                    if Appointment.objects.filter(day=day).count() < 11:
-                        if Appointment.objects.filter(day=day, time=time).count() < 1:
-                            paciente = get_object_or_404(Paciente, id=user.id)
-                            AppointmentForm = Appointment.objects.get_or_create(
-                                user=paciente,
-                                service=service,
-                                day=day,
-                                time=time,
-                            )
-                            messages.success(request, "Agendamento Salvo!")
-                            return redirect('homePaciente')
-                        else:
-                            messages.success(
-                                request, "O Horário Selecionado já foi reservado!")
-                    else:
-                        messages.success(
-                            request, "A Data selecionada está cheia!")
+                if Appointment.objects.filter(day=day, time=time).exists():
+                    messages.error(request, "O Horário Selecionado já foi reservado!")
                 else:
-                    messages.success(
-                        request, "A Data selecionada está incorreta")
+                    # Cria um novo agendamento
+                    Appointment.objects.create(
+                        user=paciente,
+                        service=service,
+                        day=day,
+                        time=time,
+                    )
+                    messages.success(request, "Agendamento Salvo!")
+                    return redirect('homePaciente')
             else:
-                messages.success(
-                    request, "A data selecionada não está no período correto!")
-        else:
-            messages.success(request, "Selecione um Médico!")
+                messages.error(request, "A data selecionada não está no período correto!")
+        except Paciente.DoesNotExist:
+            messages.error(request, "Nenhum paciente encontrado com o CPF fornecido.")
 
     return render(request, 'bookingSubmit.html', {
-        'times': hour,
+        'times': times,
+        'minDate': minDate,
+        'maxDate': maxDate,
     })
 
 
@@ -206,7 +200,6 @@ def userPanel(request):
         'user': user.id,
         'appointments': appointments,
     })
-
 
 def userCancel(request, id):
     appointment = Appointment.objects.get(pk=id)
