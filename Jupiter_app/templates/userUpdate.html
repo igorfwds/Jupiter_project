@@ -1,82 +1,61 @@
 <!DOCTYPE html>
-<title>Edit Appointment</title>
 {% load static %}
-
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
-        <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
-        <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
-        <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
-        <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
-        <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
-        <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
-        <title>Cadastro</title>
-    </head>
-
-    <body class="site_body">
-        <header class="site-header">
-            <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')"
-                src="{% static 'Jupiter_app/images/logo(1).png' %}">
-        </header>
-            <main class="site-main">
-
-                <!--if 24hrs before nobat-->
-                {% if delta24 == True %}
-                <h1 class="text-center  mt-3">Editar Agendamento</h1>
-
-                <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
-                    <form method="post" action="{% url 'userUpdate' id %}" class="me-2 ms-2" required>
-                        {% csrf_token %}
-
-                        <!--input service-->
-                        <div>
-                            <h3 class="">Selecione o Médico:</h3>
-                            <select class="form-select fs-3" name="service">
-                                <option value="Dr. Álvaro Melo - Cardiologia">Dr. Álvaro Melo - Cardiologia</option>
-                                <option value="Dra. Marcele Morais - Endocrinologia">Dra. Marcele Morais - Endocrinologia</option>
-                                <option value="Dr. Júlio Mendonça - Cirurgia Geral">Dr. Júlio Mendonça - Cirurgia Geral</option>
-                                <option value="Dra. Amanda Gonçalves - Ortopedia e Traumatologia">Dra. Amanda Gonçalves - Ortopedia e Traumatologia</option>
-                                <option value="Dr. Pedro Coutinho - Clínica Médica">Dr. Pedro Coutinho - Clínica Médica</option>
-                                <option value="Dra. Beatriz Lemos - Pediatria">Dra. Beatriz Lemos - Pediatria</option>
-                            </select>
-                        </div>
-                            <!--input day-->
-                            <div class="mt-3">
-                                <h3 class="">Selecione o Dia:</h3>
-                                <select class="form-select fs-3" name="day">
-                                    {% for validateWeekday in validateWeekdays %}
-                                    <option value="{{validateWeekday}}">{{validateWeekday}}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-
-                            <br/>
-                            <button type="submit" style="background-color: green;" class="btn btn-primary text-white">Continuar</button>
-                            <button class="button-base-header"><a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">voltar</a></button>
-                        </div>
-                    </form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/forms_tables.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/template.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/images.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
+    <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
+    <title>Cadastro</title>
+</head>
+<body class="site_body">
+    <header class="site-header">
+        <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')"
+            src="{% static 'Jupiter_app/images/logo(1).png' %}">
+    </header>
+    <main class="site-main">
+        <h1 class="text-center mt-3">Editar Agendamento</h1>
+        <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 ">
+            <form method="post" action="{% url 'userUpdate' appointment_id %}" class="me-2 ms-2" required>
+                {% csrf_token %}
+                <!--input service-->
+                <div>
+                    <h3 class="">Selecione o Médico:</h3>
+                    <select class="form-select fs-3" name="service">
+                        <option value="Dr. Álvaro Melo - Cardiologia">Dr. Álvaro Melo - Cardiologia</option>
+                        <option value="Dra. Marcele Morais - Endocrinologia">Dra. Marcele Morais - Endocrinologia</option>
+                        <option value="Dr. Júlio Mendonça - Cirurgia Geral">Dr. Júlio Mendonça - Cirurgia Geral</option>
+                        <option value="Dra. Amanda Gonçalves - Ortopedia e Traumatologia">Dra. Amanda Gonçalves - Ortopedia e Traumatologia</option>
+                        <option value="Dr. Pedro Coutinho - Clínica Médica">Dr. Pedro Coutinho - Clínica Médica</option>
+                        <option value="Dra. Beatriz Lemos - Pediatria">Dra. Beatriz Lemos - Pediatria</option>
+                    </select>
                 </div>
-                <!--else if its 24hrs before editing-->
-                {% else %}
-
-                <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 text-center fPersian">
-                    <h1 class="text-danger">A edição de agendamentos só está disponível 24 horas antes da consulta!</h1>
-                    <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Retornar para os Agendamentos</a>
+                <!--input day-->
+                <div class="mt-3">
+                    <h3 class="">Selecione o Dia:</h3>
+                    <select class="form-select fs-3" name="day">
+                        {% for validateWeekday in validateWeekdays %}
+                        <option value="{{validateWeekday}}">{{validateWeekday}}</option>
+                        {% endfor %}
+                    </select>
                 </div>
-
-                {% endif %}
-            </main>
-
-            <footer class="site-footer">
-                <div class="button-container-footer">
-                    <button type="button" class="button-base-footer"
-                        onclick="window.alert('Esse é o início do seu reagendamento de consulta.Abra a lista de médicos e selecione o médico desejado.Atente-se ao dia selecionado, consultas não poderão ser reagendadas com menos de 24 horas de antecedência.')">?</button>
-                </div>
-            </footer>
-    </body>
+                <br/>
+                <button type="submit" style="background-color: green;" class="btn btn-primary text-white">Continuar</button>
+                <button class="button-base-header"><a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">voltar</a></button>
+            </form>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="button-container-footer">
+            <button type="button" class="button-base-footer"
+                onclick="window.alert('Esse é o início do seu reagendamento de consulta.Abra a lista de médicos e selecione o médico desejado.Atente-se ao dia selecionado, consultas não poderão ser reagendadas com menos de 24 horas de antecedência.')">?</button>
+        </div>
+    </footer>
+</body>
 </html>
