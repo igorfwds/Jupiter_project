@@ -103,10 +103,10 @@
 <h2>Quarta Entrega 📦</h2>
 
 
-<p align="center"><a href="https://youtu.be/fPSGY96swlo">ScreenCast - Protótipo Lo-Fi</a></p>
+<p align="center"><a href="https://youtu.be/agv_SbbhTyo">ScreenCast - Protótipo Lo-Fi</a></p>
 
 
-<p align="center"><a href="https://youtu.be/l8hziHyQNyY?si=311jyuysP0KW0dIl">ScreenCast - Deploy</a></p>
+<p align="center"><a href="https://youtu.be/N5A83yawNII">ScreenCast - Deploy</a></p>
 
 
 <p align="center"><a href="https://youtu.be/AeFZcY-xZvc">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
