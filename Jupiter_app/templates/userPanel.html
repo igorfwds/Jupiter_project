@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>User Panel</title>
     {% load static %}
@@ -14,48 +15,60 @@
     <link rel="stylesheet" href="{% static 'Jupiter_app/texts.css' %}">
     <link rel="stylesheet" href="{% static 'Jupiter_app/reset.css' %}">
 </head>
+
 <body class="site_body">
     <header class="site-header">
-        <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')" src="{% static 'Jupiter_app/images/logo(1).png' %}">
+        <img class="logo" alt="logo" onclick="window.location.replace('/homePaciente/')"
+            src="{% static 'Jupiter_app/images/logo(1).png' %}">
     </header>
-    
+
     <main class="site-main">
         <!-- Formulário para inserir o CPF -->
         <form method="POST" action="{% url 'userPanel' %}">
             {% csrf_token %}
-            <input type="text" name="cpf" placeholder="Digite seu CPF">
+            <input type="text" name="cpf" id="cpfInput" placeholder="Digite seu CPF">
             <button type="submit">Ver Agendamentos</button>
         </form>
 
         <!-- Exibição dos Agendamentos -->
         {% if appointments %}
-            <div class="table" style="max-width: 90%; max-height: 70%;">
-                <table>
-                    <tr>
-                        <th class="agendamento-header" style="font-weight: bold;">Data da Realização</th>
-                        <th class="agendamento-header" style="font-weight: bold;">Horário</th> 
-                        <th class="agendamento-header" style="font-weight: bold;">Médico</th>
-                        <th class="agendamento-header" style="font-weight: bold;">Edição</th>
-                        <th class="agendamento-header" style="font-weight: bold;">Cancelamento</th>
-                        {% for appointment in appointments %}
-                        <tr>
-                            <td><p class="list-group mt-2">{{ appointment.day }}</p></td>
-                            <td><p class="list-group mt-2">{{ appointment.time }}</p></td>
-                            <td><p class="list-group mt-2">{{ appointment.service }}</p></td>
-                            <td><a class="btn btn-primary rounded-3 p-2" href="{% url 'userUpdate' appointment.id %}">Editar Agendamento</a></td>
-                            <td><a class="btn btn-danger rounded-3 p-2" href="{% url 'userCancel' appointment.id %}">Cancelar Agendamento</a></td>
-                        </tr>
-                        {% endfor %}
-                </table>
-            </div>
+        <div class="table" style="max-width: 90%; max-height: 70%;">
+            <table>
+                <tr>
+                    <th class="agendamento-header" style="font-weight: bold;">Data da Realização</th>
+                    <th class="agendamento-header" style="font-weight: bold;">Horário</th>
+                    <th class="agendamento-header" style="font-weight: bold;">Médico</th>
+                    <th class="agendamento-header" style="font-weight: bold;">Edição</th>
+                    <th class="agendamento-header" style="font-weight: bold;">Cancelamento</th>
+                    {% for appointment in appointments %}
+                <tr>
+                    <td>
+                        <p class="list-group mt-2">{{ appointment.day }}</p>
+                    </td>
+                    <td>
+                        <p class="list-group mt-2">{{ appointment.time }}</p>
+                    </td>
+                    <td>
+                        <p class="list-group mt-2">{{ appointment.service }}</p>
+                    </td>
+                    <td><a class="btn btn-primary rounded-3 p-2" href="{% url 'userUpdate' appointment.id %}">Editar
+                            Agendamento</a></td>
+                    <td><a class="btn btn-danger rounded-3 p-2" href="{% url 'userCancel' appointment.id %}">Cancelar
+                            Agendamento</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
         {% endif %}
-        <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/'" >voltar</a></button>
+        <button class="button-base-header"><a onclick="window.location.href = '/homePaciente/'">voltar</a></button>
     </main>
 
     <footer class="site-footer">
         <div class="button-container-footer">
-            <button type="button" class="button-base-footer" onclick="window.alert('Essa é sua lista de consultas marcadas no Jupiter. Para reagendar uma consulta clique em EDITAR AGENDAMENTO ao lado da consulta desejada. Para cancelar uma consulta clique em CANCELAR AGENDAMENTO ao lado da consulta desejada.')">?</button>
+            <button type="button" class="button-base-footer"
+                onclick="window.alert('Essa é sua lista de consultas marcadas no Jupiter. Para reagendar uma consulta clique em EDITAR AGENDAMENTO ao lado da consulta desejada. Para cancelar uma consulta clique em CANCELAR AGENDAMENTO ao lado da consulta desejada.')">?</button>
         </div>
     </footer>
 </body>
+
 </html>
