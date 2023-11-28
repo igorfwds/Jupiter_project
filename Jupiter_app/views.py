@@ -193,13 +193,17 @@ def bookingSubmit(request):
 
 
 def userPanel(request):
-    user = request.user
-    appointments = Appointment.objects.filter(
-        user=user.id).order_by('day', 'time')
-    return render(request, 'userPanel.html', {
-        'user': user.id,
-        'appointments': appointments,
-    })
+    if request.method == 'POST':
+        cpf = request.POST.get('cpf')
+        paciente = get_object_or_404(Paciente, cpf=cpf)
+        appointments = Appointment.objects.filter(user=paciente).order_by('day', 'time')
+
+        return render(request, 'userPanel.html', {
+            'appointments': appointments,
+        })
+
+    # Se não for POST, ou seja, ao acessar a página inicialmente
+    return render(request, 'userPanel.html')
 
 def userCancel(request, id):
     appointment = Appointment.objects.get(pk=id)
