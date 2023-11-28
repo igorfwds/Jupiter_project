@@ -141,6 +141,7 @@ def booking(request):
         'validateWeekdays': validateWeekdays,
     })
 
+# alteração para comitar pra azure
 
 def bookingSubmit(request):
     user = request.user
