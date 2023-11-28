@@ -106,7 +106,7 @@
 <p align="center"><a href="https://youtu.be/fPSGY96swlo">ScreenCast - Protótipo Lo-Fi</a></p>
 
 
-<p align="center"><a href="https://youtu.be/pE0cxlScEe8">ScreenCast - Deploy</a></p>
+<p align="center"><a href="https://youtu.be/l8hziHyQNyY?si=311jyuysP0KW0dIl">ScreenCast - Deploy</a></p>
 
 
 <p align="center"><a href="https://youtu.be/AeFZcY-xZvc">ScreenCast - CI/CD com Build e Deployment Automatizado</a></p>
